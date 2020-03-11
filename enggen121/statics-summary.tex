@@ -1,6 +1,5 @@
 \documentclass[a4paper, 12pt]{article}
-\usepackage{graphicx}
-\usepackage{amsmath}
+\usepackage{graphicx, amsmath}
 \newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
 \begin{document}
 
@@ -78,5 +77,31 @@ Finding the moment around A
 A couple is two forces that have equal magnitude but opposite direction, but that do not have the same line of action.
 These forces sum to zero, but generate a moment. The value of a moment is simply the moments of the two forces subtracted from one another.
 Or, alternatively, The magnitude of the two forces times by the distance between them. IMPORTANT NOTE: Couples have never been in a 121 exam before.
+
+\section{Resultants}
+In engineering it is more common to represent a set of forces acting on an object as its \textit{resultant} instead of individual forces.
+Hence you have a single vector with a magnitude and angle that could represent multiple forces acting on an object. 
+The resultant is simply the sum of all the forces acting on an object (adding the x and y components of course). 
+The difficulty with these problems comes from finding where to place the resultant on an object.
+\subsection{Where to place the resultant}
+When beginning the problem, we chose a point of reference.
+Sensible points of reference will be the origin or a point where a force acts.
+Anywhere that you have data for will do but technically you can use any point.
+You can calculate x and y distances with $X=\frac{M_r}{R_y}$,$Y=\frac{M_r}{R_x}$.
+This is simply rearranging the moments formula but let's do an example.
+
+\subsection{Example}
+\includegraphics[scale=0.05]{4}
+\begin{gather*}
+    \theta = \arctan{\frac{3}{5}} = 30.96 \\
+    R_x = 120\cos{60} - 100\cos{39.6} \\
+    R_y = 100\sin{30.96} + 120\sin{60} \\
+    |R| = \sqrt{R_x^2+R_y^2} = 157.49\unit{kN} \\
+    \theta_r = \arctan{\frac{R_y}{R_x}} = 99.4 \\
+    M_o = -500 + (120\sin{60}\cdot9) + (100\sin{59.04}\cdot4.5) + (100\cos{58.04}\cdot6) = 1129\unit{kNm} \\
+    X = \frac{M_0}{R_y} = 7.27\unit{m} \\
+    Y = \frac{M_0}{R_x} = 43.88\unit{m} \\
+\end{gather*}
+
 
 \end{document}
