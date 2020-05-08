@@ -1,0 +1,69 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\title{Dynamics Summary}
+\author{Alexander Bailey}
+
+\maketitle
+
+\section*{Kinematics of Particles}
+\par\noindent\rule{0.4pt}{0.4pt}
+\begin{center}
+\subsection*{The 7 Holy Steps}
+\end{center}
+Here are Hazim's 7 holy steps for kinematics of particles:
+\begin{enumerate}
+    \item Identify provided information and what is required 
+    \item Sketch the motion and identify points of interest on the path 
+    \item Choose coordinate system
+    \item Construct the kinematic conditions table 
+    \item For each interval, identify the type of acceleration and choose the appropriate equations to solve
+    \item Solve equations for required information
+    \item Check that your answers make sense
+\end{enumerate}
+\noindent
+Ensure that when you integrate it is definite integration (with limits) because we will almost 
+always know the limits and it's preferred over indefinite integration. Additionally, ALWAYS draw a FBD for a question
+(or maybe a sketch of the motion) and note that you might want to draw a kinematics condition table for every
+part of a question as the conditions change.
+
+\begin{center}
+\subsection*{Rectilinear Motion}
+\end{center}
+Also called linear motion, rectilinear motion is motion in 1 dimension i.e a straight line.
+These kinematic equations form the basis of rectilinear motion:
+
+\begin{align*}
+    v = \frac{ds}{dt} \text{, }
+    a = \frac{dv}{dt} \text{, }
+    s = v\frac{ds}{dt}\\
+\end{align*}
+If acceleration is constant, we can derive these equations by integration:
+\begin{align}
+    v - v_0 = a(t-t_0) \\ 
+    v^2 - v_0^2 = 2a(s-s_0) \\ 
+    s - s_0 = v_0(t-t_0) + \frac{1}{2}a(t-t_0)^2
+\end{align}
+
+The general approach for a rectilinear motion question is detailed in the 7 holy steps but for the solution
+steps we will use any of the equations above (and maybe others, depending on the question). Acceleration (a) will 
+be one of four things: constant, a function of time, a function of velocity or a function of displacement. Each
+of these have different methods.
+
+\begin{enumerate}
+    \item Const.: use the above equations for constant velocity to solve 
+    \item a(t): solve $a = \frac{dv}{dt}$
+    \item a(v): solve $a = \frac{dv}{dt}$ or $vdv = ads$ depending on what you are solving for
+    \item a(s): solve $vdv = ads$ 
+\end{enumerate}
+
+\begin{center}
+\subsection*{Plane Curvilinear Motion}
+\end{center}
+
+\end{document}
+
+
