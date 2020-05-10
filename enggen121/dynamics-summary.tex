@@ -48,6 +48,7 @@ If acceleration is constant, we can derive these equations by integration:
     s - s_0 = v_0(t-t_0) + \frac{1}{2}a(t-t_0)^2
 \end{align}
 
+\noindent
 The general approach for a rectilinear motion question is detailed in the 7 holy steps but for the solution
 steps we will use any of the equations above (and maybe others, depending on the question). Acceleration (a) will 
 be one of four things: constant, a function of time, a function of velocity or a function of displacement. Each
@@ -63,7 +64,34 @@ of these have different methods.
 \begin{center}
 \subsection*{Plane Curvilinear Motion}
 \end{center}
+\subsubsection*{Simple Projectile Motion}
+Simple Projectile Motion is for objects with no thrust or other forces. It is 'simple'.
+The primary assumptions are: $a_x=0$ and $a_y=-9.81$ ($a_y$ might changed based on where you put the positive y etc).
+The holy steps are the same as for rectilinear motion with just a few additional considerations. 
+We know must handle 2 dimensions. This means we consider for v (for example) both $v_x$ and $v_y$. 
+This will be the same for s, for a etc.
 
+\subsubsection*{Circular Motion}
+Circular Motion is a special case of curvilinear motion involving motion about a fixed point with constant radius. These rotational motion equations will be important:
+\begin{align}
+    v = r\omega \\
+    a_n = r \omega^2 = \frac{v^2}{r} \\
+    a_t = r\alpha 
+\end{align}
+\textbf{Normal Tangential Co-ordinates}
+\\
+\noindent
+It is almost always more convenient to use Normal Tangential (n-t) co-ordinates in circular motion problems.
+n-t co-ordinates place the origin at the particle, this means that we can't talk about displacement / position but
+we can more easily keep track of a particles velocity and acceleration when considering $a_t$ and $a_n$.
+\noindent
+The normal component is responsible for changing the direction of the vector. 
+It will always act towards the center and will always be positive (just look at the equation).
+The tangential component is responsible for changing the magnitude of the vector. 
+It will always act 'tangentially' i.e touching the circle at the particle and in the \textit{direction of motion}
+If the velocity of the particle is constant then the tangential acceleration is 0.
+
+\section{Kinetics of Particles}
 \end{document}
 
 
