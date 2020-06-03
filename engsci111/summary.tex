@@ -1,26 +1,43 @@
 \documentclass[12pt] {article}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb, amsfonts}
 \begin{document}
 
 \title{Modelling Process Notes}
 \author{Alexander Bailey}
 \maketitle
 
-\section*{Modelling Process}
+\section{Modelling Process}
 \subsection*{Factors}
 Anything that will have some effect on the your calculations e.g. drag, friction, mass, buoyancy, area.
 Note that separate things qualities will count separately e.g. a triangle's area and a square's.
+
 \subsection*{Assumptions}
 A statement that makes the problem simpler - cancels factors. 
 e.g. 'Total length of wood is not reduced when it is cut'
 or 'There are no significant currents' 
+
 \subsection*{Precise Problem Statement}
-"Given [KEY FACTORS AND ASSUMPTIONS], Find [THE VALUE YOU'RE ASKED TO FIND]"
+Given (key factors and assumptions), Find (the value you're asked to find)
+
 \subsection*{Formulating a Model}
-$x \propto y,1/z \implies x = \frac{ky}{z} \\
+\begin{equation*}
+x \propto y,1/z \implies x = \frac{ky}{z} 
+\end{equation*}
 
 \subsection*{Modelling Forces}
 Use Newton's 2nd law, subtract negative forces and add positive ones. Use the ones from the list.
+
+\section{Differentiation}
+\subsection*{Implicit Differentiation}
+\subsection*{Series and Approximation}
+\subsection*{Numerical Differentiation}
+\section{Integration}
+\subsection*{Integration Techniques}
+\begin{enumerate}
+  \item U substitution 
+  \item Integration by Parts
+\end{enumerate}
+\subsection*{Partial Fractions}
 
 \section{Ordinary Differential Equations}
 Ordinary differential equations are equations containing one or more functions of one independent variable. 
@@ -31,8 +48,8 @@ and ODEs have standard 'd'. $\frac{dy}{dx}$ means $y$ is the dependent variable 
 \subsubsection*{Order}
 Highest derivative (also equal to number of values needed to find a particular solution) e.g.
 \begin{align*}
-    &\frac{dy}{dx} = 5x \text{ 1st Order} \\
-    &\frac{d^4y}{dx^4} = \frac{dy}{dx} + 2 \text{ 4th Order} \\
+    &\frac{dy}{dx} = 5x \text{ is 1st Order} \\
+    &\frac{d^4y}{dx^4} = \frac{dy}{dx} + 2 \text{ is 4th Order} \\
 \end{align*}
 
 \subsubsection*{Linear}
@@ -46,7 +63,7 @@ Involves only derivatives of y and terms of y to the 1st power e.g. ONLY $\frac{
 If all (non-zero) terms involve the dependent variable then the equation is homogeneous
 \begin{align*}
     &\frac{dx}{dt} = x \text{ is homogeneous} \\
-    &\frac{dy}{dx} = 2y + 3 \text{ is not homogeneous (3 does involve x)} \\
+    &\frac{dy}{dx} = 2y + 3 \text{ is not homogeneous (3 doesn't involve x)} \\
 \end{align*}
 
 \subsection*{Forming Differential Equations}
@@ -64,5 +81,143 @@ mass/acceleration (or their derivatives).
 \end{enumerate}
 
 \section{Probability}
+\section{Vectors}
+\section{Matrices}
+Vectors are just a special case of Matrices (one column/row) so a lot of their properties
+are shared with matrices. For instance, addition/subtraction are performed component wise 
+and scalar multiplication works just like it does in vectors i.e
+\begin{equation*}
+  \begin{bmatrix}
+    a & d \\
+    b & e \\
+    c & f \\
+  \end{bmatrix}
+  + 
+  \begin{bmatrix}
+    g & j \\
+    h & k \\
+    i & l \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    a+g & d+j \\
+    b+h & e+k \\
+    c+i & f+l \\
+  \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+  3
+  \begin{bmatrix}
+    -1 & 0 \\
+    2 & 1 \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    -3 & 0 \\
+    6 & 3 \\
+  \end{bmatrix}
+\end{equation*}
+The only thing you will need to keep in mind for matrix addition/subtraction is 
+that you can only add matrices of the same order. What's order?
 
+\subsection*{Order of Matrices}
+By convention, the order of a matrix is expressed like $m \times n$. Where m is the number
+of rows and n the number of columns. This is opposite to the traditional `$x$ \& $y$' way
+of thinking but you'll see why when you get to multiplication.
+
+\subsection*{Transpose}
+The first of the new operations we will learn for matrices is something called `transpose'.
+You can think of this like the rotation of a matrix. It is represented by a superscript capital T.
+\begin{equation*}
+  \begin{bmatrix} 
+    1 \\
+    2 \\
+    1 \\
+  \end{bmatrix} 
+  ^\intercal
+  =
+  \begin{bmatrix}
+    1 & 2 & 1 
+  \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+  \begin{bmatrix} 
+    0 & -2 \\
+    2 & 12 \\
+    0 & -3 \\
+  \end{bmatrix} 
+  ^\intercal
+  =
+  \begin{bmatrix} 
+    -2 & 12 & 3 \\
+     0 & 2 & 0 \\
+  \end{bmatrix} 
+\end{equation*}
+
+\subsection*{Matrix Multiplication}
+For two $m \times n$ matrices, 
+\begin{itemize}
+  \item Cover everything but the first column in the second matrix
+  \item Take the dot product (just like vectors) of that and each of the m rows of the first matrix (where the first is the first row of the matrix output, the second the second row etc)
+  \item Repeat for each of the $n$ columns in the second matrix
+\end{itemize}
+For two $m \times n$ matrices, the first must have the same number of rows as columns in the
+second. 
+
+\subsubsection*{Example}
+\begin{gather*}
+  \begin{bmatrix}
+    1 & 3 & 1 \\
+    2 & 4 & 5 \\
+    6 & 1 & 2 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    2 & 3 & 1 \\
+    4 & 2 & 1 \\
+    6 & 1 & 1 \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    20 & 10 & 5 \\
+    50 & 19 & 11 \\
+    28 & 22 & 9 \\
+  \end{bmatrix}
+  \\
+  \begin{bmatrix}
+    [1 & 3 & 1] \\
+    [2 & 4 & 5] \\
+    [6 & 1 & 2] \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    2 & 3 & 1 \\
+    4 & 2 & 1 \\
+    6 & 1 & 1 \\
+  \end{bmatrix} 
+  \\
+  [2, 4, 6]\cdot [1, 3, 1] = 2\cdot1 + 4\cdot3 + 6\cdot1 = 20
+\end{gather*}
+
+\subsection*{Matrix Multiplication as a Transformation}
+Taking two equations, that move two points $x$ and $y$ to two new points $x_{new}$ and $y_{new}$. 
+\begin{align*}
+  2x - y = x_{new} \\
+  x + y = y_{new}
+\end{align*}
+These can be represented as matrices, (the matrix containing the co-efficients
+is called a `transformation matrix')
+\begin{equation*}
+  \begin{bmatrix}
+    2 & -1 \\
+    1 & 1 
+  \end{bmatrix}
+  \begin{bmatrix}
+    x \\
+    y 
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    x_{new} \\
+    y_{new}
+  \end{bmatrix}
+\end{equation*}
 \end{document}

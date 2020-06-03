@@ -1,12 +1,45 @@
 \documentclass[12pt] {article}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
 \begin{document}
 
-\title{Modelling Process Notes}
+\title{Compsci 120 Notes}
 \author{Alexander Bailey}
 \maketitle
 
 \section*{Modulo}
+Modulo can be considered the 'remainder operator'. It is represented here with '$\Mod$'
+but appears (in the text book and elsewhere as '$\%$')
+\subsection*{Congruence}
+\begin{equation*}
+  a \Mod n \equiv b 
+  \implies a \Mod n = b \Mod n
+\end{equation*}
+\begin{align*}
+  a \Mod n = b \Mod n \\
+  \implies a-b = nk, k \in \mathbb{Z} \\
+\end{align*}
+This gives us the operations:
+\begin{align}
+  &(a+c) \Mod n = (b+d) \Mod n \\
+  &(ac) \Mod n = (bd) \Mod n \\
+  &(a^k) \Mod n = (b^k) \Mod n 
+\end{align}
+\subsection*{Finding the last digit}
+The last digit of any decimal number a can be found by $a \Mod 10$ for example,
+\begin{align*}
+  &\text{Finding the last digit of } 213047^{129314} \\
+  &213047^{129314} \Mod 10 \\
+  &\text{Observe, } 213047 \Mod 10 = 7 \\
+  &\implies  213047^{129314} \Mod 10 = 7^{129314} \Mod 10 \text{ (from eqn. 3)} \\
+  &\text{Notice, } (7^2) \Mod 10 = 49 \Mod 10 = 9 \\
+  &\text{Notice, } (7^2 \cdot 7^2) \Mod 10 = 81 \Mod 10 = 1 \\
+  &\text{So for any k, } (7^{4k}) \Mod 10 = (7^2 \cdot 7^{4k}) \Mod 10 = 1 \\
+  &\text{Because } 129314  = 129300+12+2 \\
+  &\text{We have } (7^{129314}) \Mod 10 = 9 \\
+  &\text{So the last character is 9}
+\end{align*}
+
 
 \section*{Probability}
 Ordered means that order matters e.g. a pattern of letters. With repetitions means that repeated values will have 
@@ -23,4 +56,26 @@ $\frac{n!}{k!(n-k)!} = {n \choose k}$
 \section*{Functions}
 For a function to exist the domain of g must equal the co-domain of f
 
+\section*{Graphs}
+
+\section*{Proofs}
+\subsection*{Direct Proof}
+A direct proof is when you take simple known facts, axioms and theorems and 
+work them algebraically until you prove the thing you are looking for is true or false.
+For statements like 'p implies q' or 'if p then q' we can assume p is true and use 
+our known facts/algebra to prove q.
+\subsection*{Proof by Contradiction}
+Say we have a fact p we want to prove is true. We assume p is false then reach
+a contradiction so in fact p \underline{must} be true. Say we want to prove 
+p implies q. Then we can assume p is true, but q is false. Then we reach a contradiction.
+\subsection*{Proof by Cases}
+Say we want to prove a statement in the form 'for all numbers/graphs/etc' but 
+the 'numbers/graphs/etc' can be thought of as several families so we deal with each 
+separately in different 'cases'. Eg. we could consider odd \& even numbers.
+\subsection*{Proof by Construction}
+Proof by construction is a bit of an odd ball but can be brought down to simply 
+producing an example of what you are trying to prove. If the statement is 
+of the form "there exists x" it is a valid proof to just produce a numerical/physical
+example otherwise you must work in general i.e "a graph with n vertices".
+\subsection*{Proof by Induction}
 \end{document}

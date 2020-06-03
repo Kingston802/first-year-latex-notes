@@ -1,16 +1,14 @@
 \documentclass[a4paper, 12pt]{article}
-\usepackage{graphicx, amsmath, amssymb}
+\usepackage{graphicx, amsmath, amssymb, parskip}
 \newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
 \begin{document}
 
 \title{Intro to Statics}
 \author{Alexander Bailey}
 \maketitle
-
-\begin{quote}
+\begin{center}
 \textit{Capacity must exceed demand}
-\end{quote}
-
+\end{center}
 Statics is a subsection of mechanics that focuses on bodies that are not moving.
 Hence, it is the study of bodies at rest.
 Statics is largely derived from Newton's second and third laws that state:
@@ -25,39 +23,33 @@ A force is "the action of one body upon another". Forces are vectors, they have 
 Alternatively, it could be described as "an interaction that, when unopposed, will cause an object to move". 
 From Newton's second law $F=ma$, we can see that a force is a product of a vector (a) and a scalar (m) hence
 the direction of F is dependent on the direction of the acceleration. The units are as follows:  
-\newline
-\vspace*{2cm}
+\begin{center}
 \begin{tabular}{l|l}
     Acceleration & $m/s^2$ \\
     Mass & $kg$ \\
     Force & $N$ \\
     Force & $kg\cdot m/s^2$ \\
 \end{tabular}
-
+\end{center}
+\newpage
 \section{Force Systems}
 Force systems are systems involving forces (wow). Force systems can be 'deterministic' meaning that the vertical and horizontal components and moments sum to zero.
 They can (generally) be solved in three different ways.
-Though sometimes one method will be much easier than the other. The three ways we have been taught are:
+Although sometimes one method will be much easier than the other. The three ways we have been taught are:
 
 \begin{itemize}
     \item $x$ and $y$ components 
     \item sine and cosine rules
     \item rotated co-ordinate systems
 \end{itemize}
-
-$x$ and $y$ components is simply splitting the forces into their $x$ and $y$ components then solving
-for whatever you need. Sine and cosine rules are:
+The $x$ and $y$ components method simply involves splitting the forces into their $x$ and $y$ components then solving
+for whatever you need. The Sine and cosine rules are:
 \begin{equation*}
     a^2 = b^2 + c^2 - 2bc\cos{A} 
 \end{equation*}
 \begin{equation*}
     \frac{\sin{A}}{\alpha} = \frac{\sin{B}}{\beta} 
 \end{equation*}
-
-% \newpage
-% \section{Equilibrium}
-% Newton's first law states that a rigid body will remain at rest or continue to move in a straight line if there are no unbalanced forces
-% acting on it. This is when the object is said to be "at equilibrium". The forces on the object "sum to zero".
 
 \section{Moments}
 Moments are defined by: $M=Fd$.
@@ -73,9 +65,11 @@ Solving Moment Questions can be as easy as three (general) steps:
 \end{enumerate}
 \newpage
 \subsection{Example}
+\begin{center}
 \includegraphics[scale=0.2]{topic-3}
 
 Finding the moment around A
+\end{center}
 \begin{gather*}
     F_{2x} = 2\cos{30} \\ 
     F_{2y} = 2\sin{30} \\
@@ -97,19 +91,22 @@ Finding the moment around A
 \subsection{Couples}
 A couple is two forces that have equal magnitude but opposite direction, but that do not have the same line of action.
 These forces sum to zero, but generate a moment. The value of a moment is simply the moments of the two forces subtracted from one another.
-Or, alternatively, The magnitude of the two forces times by the distance between them. IMPORTANT NOTE: Couples have never been in a 121 exam before.
+Or, alternatively, The magnitude of the two forces times by the distance between them.
+COUPLES HAVE NEVER BEEN IN A 121 EXAM BEFORE.
 
 \section{Resultants}
 In engineering it is more common to represent a set of forces acting on an object as its \textit{resultant} instead of individual forces.
 Hence you have a single vector with a magnitude and angle that could represent multiple forces acting on an object. 
-The resultant is simply the sum of all the forces acting on an object (adding the x and y components of course). 
+The resultant is simply the sum of all the forces acting on an object (adding the $x$ and $y$ components of course). 
 The difficulty with these problems comes from finding where to place the resultant on an object.
-\subsection{Where to place the resultant} When beginning the problem, we chose a point of reference.
+\subsection{Where to place the resultant} 
+When beginning the problem, we chose a point of reference.
 Sensible points of reference will be the origin or a point where a force acts.
 Anywhere that you have data for will do but technically you can use any point.
-You can calculate x and y distances for the line of action with $X=\frac{M_r}{R_y}$,$Y=\frac{M_r}{R_x}$.
-This is simply rearranging the moments formula but let's do an example.
+You can calculate $x$ and $y$ distances for the line of action with $X=\frac{M_r}{R_y}$,$Y=\frac{M_r}{R_x}$.
+This is simply a rearranging of the moments formula but let's do an example.
 
+\begin{center}
 \includegraphics[scale=0.04]{4}
 \begin{gather*}
     \theta = \arctan{\frac{3}{5}} = 30.96 \\
@@ -117,10 +114,12 @@ This is simply rearranging the moments formula but let's do an example.
     R_y = 100\sin{30.96} + 120\sin{60} \\
     |R| = \sqrt{R_x^2+R_y^2} = 157.49\unit{kN} \\
     \theta_r = \arctan{\frac{R_y}{R_x}} = 99.4 \\
-    M_o = -500 + (120\sin{60}\cdot9) + (100\sin{59.04}\cdot4.5) + (100\cos{58.04}\cdot6) = 1129\unit{kNm} \\
+    % M_o = -500 + (120\sin{60}\cdot9) + (100\sin{59.04}\cdot4.5) + (100\cos{58.04}\cdot6) \\
+    M_o = 157.49\unit{kN} \\
     X = \frac{M_0}{R_y} = 7.27\unit{m} \\
     Y = \frac{M_0}{R_x} = 43.88\unit{m} \\
 \end{gather*}
+\end{center}
 \newpage
 
 \section{Centroids}
@@ -162,27 +161,30 @@ the centroid will be at ($\bar{x}=2,\bar{y}=\frac{4}{3}$).
 \end{center}
 
 \subsection{Example}
+\begin{center}
 \includegraphics[scale=0.15]{centroids}
-
-\begin{align*}
-    A_1 = &\frac{1}{2} \cdot 3 \cdot 6 = 9\\
-    A_2 = &\frac{1}{2} \cdot 5 \cdot 3 = 7.5\\
-    A_3 = &\frac{1}{2} \cdot 2 \cdot 6 = 6\\
-    A_4 = &\frac{1}{2} \cdot 1 \cdot 4 = 2\\
-    A_5 = &\pi \\ 
-    A_6 = &30 \\ 
-    A_7 = &\frac{1}{2} \cdot 2 \cdot 4 = 4\\
-    A_t = &\sum A_n = 43.36\\ 
-    \bar{x}_1 = &2 \\
-    \bar{x}_2 = &6.333 \\
-    \bar{x}_3 = &8.666 \\
-    \bar{x}_4 = &2.333 \\
-    \bar{x}_5 = &7 \\
-    \bar{x}_6 = &5.5 \\
-    \bar{x}_7 = &3.333 \\
-    \bar{x} = &\frac{\sum x_n A_n}{A_t} \\
-    \bar{x} = &\frac{2 \cdot 9 + 6.333 \cdot 7.5 + 8.666 \cdot 6 + 2.333 \cdot 2 + 7 \cdot \pi + 30 \cdot 5.5 + 3.333 \cdot 4}{43.36} \\
-\end{align*}
+\end{center}
+\begin{equation*}
+\begin{gathered}
+    A_1 = \frac{1}{2} \cdot 3 \cdot 6 = 9\\
+    A_2 = \frac{1}{2} \cdot 5 \cdot 3 = 7.5\\
+    A_3 = \frac{1}{2} \cdot 2 \cdot 6 = 6\\
+    A_4 = \frac{1}{2} \cdot 1 \cdot 4 = 2\\
+    A_5 = \pi \\ 
+    A_6 = 30 \\ 
+    A_7 = \frac{1}{2} \cdot 2 \cdot 4 = 4\\
+    A_t = \sum A_n = 43.36\\ 
+    \bar{x}_1 = 2 \\
+    \bar{x}_2 = 6.333 \\
+    \bar{x}_3 = 8.666 \\
+    \bar{x}_4 = 2.333 \\
+    \bar{x}_5 = 7 \\
+    \bar{x}_6 = 5.5 \\
+    \bar{x}_7 = 3.333 \\
+    \bar{x} = \frac{\sum x_n A_n}{A_t} \\
+    \bar{x} = \frac{2 \cdot 9 + 6.333 \cdot 7.5 + 8.666 \cdot 6 + 2.333 \cdot 2 + 7 \cdot \pi + 30 \cdot 5.5 + 3.333 \cdot 4}{43.36} \\
+\end{gathered}
+\end{equation*}
 
 \section{Truss Problems}
 Structures contain members. A member is essentially anything that makes up the structure i.e a beam or support. 
@@ -251,15 +253,23 @@ Splitting the triangle into a rectangle of height 3 and a triangle of height 2
 Then you can use the forces to solve the rest of the problem (find $R_a$ etc)
 
 \section{Bending and Shear}
+Bending and Shear moment diagrams show the internal forces acting on a beam and are used
+for structural analysis. When making a cut through a beam in a static situation, the 
+internal forces must cancel the external forces. The BMD will be the integral of the SFD so
+when there is a flat line (constant) in the SFD it should be a line with constant gradient in
+the BMD. When there is a constant gradient line in the SFD there should be a parabola in the BMD etc.
+Here we can calculate internal forces as we move the cut along the beam.
+
+Positive bending will be like a happy face, negative bending (less commmon, also called hogging)
+is like a sad face. 
 
 \section{Friction} 
 Friction is a force that opposes motion caused by the inherent imperfect roughness of two surfaces. 
 The force required to cause sliding of a mass (purely horizontal motion) is dependent on F (the friction force)
 where F is dependent upon N (the normal force, reaction of the support (ground)). Thus, F (the force due to friction) 
 is given by $F=\mu N$ where $\mu$ is the coefficient of friction. IMPORTANT NOTE: There are two 'coefficients of friction', $\mu_k$ and $\mu_s$.
-These are the coeffiencents of static friction and kinetic friction. Unless stated, assume: $\mu = \mu_k = \mu_s$.
+These are the coefficients of static friction and kinetic friction. Unless stated, assume: $\mu = \mu_k = \mu_s$.
 
-\subsection{Other notes}
 $F = \mu N$ describes the magnitude only at the critical threshold just before motion 
 would commence i.e the maximum friction force. Keep in mind, friction is a reaction so can only act with up to the level of the loading. 
 The friction coefficient is usually stated or they might ask you to calculate it. The angle of the slop that will cause a body to slip down
