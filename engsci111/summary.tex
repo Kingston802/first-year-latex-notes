@@ -78,10 +78,77 @@ mass/acceleration (or their derivatives).
     \item Separation of Variables 
     \item Euler's Method    
     \item Integrating Factor
+    \item Exponential Substitution
 \end{enumerate}
 
+\subsubsection*{Euler's Method}
+Euler's method is a numerical method for solving D.E.s that uses a 2 term Taylor Series 
+and is simply stated by the equation.
+\begin{equation*}
+  f(x+h) \approx f(x) + hf'(x)
+\end{equation*}
+These questions are easiest to complete if you use a table for the values 
+of $x$, $f(x)$, $f'(x)$ and then calculate $f(x+h)$ e.g.
+\vspace{1em}
+\newline
+$\begin{array}{c|c|c|c}
+  x & f(x) & f'(x) & f(x) + hf'(x) \\
+  1 & 1^2 & 2 & 4 \\
+  4 & \dots & \dots & \dots \\
+\end{array}$
+
+\subsubsection*{Exponential Substitution}
+Exponential Substitution allows you to solve a 2nd order O.D.E using something called
+a `characteristic equation'. You substitute in a trial solution $e^{\lambda t}$
+and then complete the substitution (differentiate) and then divide through by your 
+trial solution leaving you with the characteristic equation which you can then solve for
+$\lambda$. You then substitute your values into the equation:
+\begin{equation*}
+  x=C_1e^{\lambda t} + C_2e^{\lambda t} \\
+\end{equation*}
+This is a general solution, to calculate the exact solution you need two points 
+(for a 2nd order equation) to calculate values of $C_1$ and $C_2$. e.g
+\begin{gather*}
+  \frac{d^2x}{dt^2} - \frac{dx}{dt} -6x =0 \\
+  \lambda^2 - \lambda - 6 = 0\\
+  \implies \lambda=3,-2 \\
+  x=c_1e^{3t} + c_2e^{-2t} \text{ gen. soln.} \\
+  \text{Given x(0) = 0, x'(0)=5} \\
+  0 = C_1 + C_2 \implies C_1 = -C_2 \\
+  5 = 3C_1 + -2C_2 \implies C_2 = -1 \\
+  \implies C_1 = 1 \\
+  x=e^{3t} - e^{-2t} \text{ exact soln.} \\
+\end{gather*}
+
+\subsubsection*{Integrating Factor}
+\begin{equation*}
+\text{if } h(x)=\int p(x)dx
+\end{equation*}
+\begin{equation*}
+  \frac{dy}{dx} + p(x)y = r(x) \text{ has solution } y = e^{-h(x)} \int e^{h(x)}r(x)dx
+\end{equation*}
+
 \section{Probability}
+\subsection*{Some General Rules}
+\begin{align*}
+  Pr(A \vert B) &= \text{Probability of A happening given B has already happened} \\
+                &= \frac{Pr(A\&B)}{Pr(B)} \\
+  Pr(A \& B) &= Pr(A) \times Pr(B) \text{ If they are independent}
+\end{align*}
+\subsection*{Continuous Random Variables}
+Continuous Random Variables that are infinite i.e height as there are an infinite amount 
+of possible heights with infinite accuracy. When graphed the area under a graph (probability density function)
+will always sum to one i.e
+\begin{equation*}
+  \int_\infty^\infty f(x)dx = 1 
+\end{equation*}
+\subsection*{Bayes Theorem}
+\begin{equation*}
+  Pr(A \vert B) = \frac{Pr(A)}{Pr(A)Pr(B \vert A) + Pr(~A)Pr(B \vert ~A)}
+\end{equation*}
+
 \section{Vectors}
+\newpage
 \section{Matrices}
 Vectors are just a special case of Matrices (one column/row) so a lot of their properties
 are shared with matrices. For instance, addition/subtraction are performed component wise 
@@ -153,6 +220,7 @@ You can think of this like the rotation of a matrix. It is represented by a supe
      0 & 2 & 0 \\
   \end{bmatrix} 
 \end{equation*}
+\newpage
 
 \subsection*{Matrix Multiplication}
 For two $m \times n$ matrices, 
