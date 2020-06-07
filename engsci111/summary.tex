@@ -220,6 +220,7 @@ You can think of this like the rotation of a matrix. It is represented by a supe
      0 & 2 & 0 \\
   \end{bmatrix} 
 \end{equation*}
+Note: $\textbf{A}\textbf{B} \neq \textbf{B}\textbf{A}$ but $(\textbf{A}\textbf{B})^\intercal = \textbf{B}^\intercal \textbf{A}^\intercal$
 \newpage
 
 \subsection*{Matrix Multiplication}
@@ -288,4 +289,136 @@ is called a `transformation matrix')
     y_{new}
   \end{bmatrix}
 \end{equation*}
+
+\subsection*{Transformation Matrices }
+A transformation matrix is a square matrix that when you multiply a matrix of points by it 
+will perform a transformation i.e scale it or rotate it etc. All of these examples are for 
+a `unit square' which for a length k is the matrix:
+\begin{equation*}
+  \begin{bmatrix}
+    k & 0 \\
+    0 & k \\
+  \end{bmatrix}
+\end{equation*}
+
+\subsubsection*{Stretch of $k$ in the $x$ direction}
+\begin{equation*}
+  \begin{bmatrix}
+    k & 0 \\
+    0 & 1 \\
+  \end{bmatrix}
+\end{equation*}
+
+\subsubsection*{Stretch of $k$ in the $y$ direction}
+\begin{equation*}
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & k \\
+  \end{bmatrix}
+\end{equation*}
+\subsubsection*{Shear of $k$ in the $x$ direction }
+\begin{equation*}
+  \begin{bmatrix}
+    1 & k \\
+    0 & 1 \\
+  \end{bmatrix}
+\end{equation*}
+
+\subsubsection*{Shear of $k$ in the $y$ direction }
+\begin{equation*}
+  \begin{bmatrix}
+    1 & 0 \\
+    k & 1 \\
+  \end{bmatrix}
+\end{equation*}
+
+\subsubsection*{Rotation about the origin by $\theta$ anti-clockwise}
+\begin{equation*}
+  \begin{bmatrix}
+    \cos(\theta) & -\sin(\theta) \\
+    \sin(\theta) & \cos(\theta) \\
+  \end{bmatrix}
+\end{equation*}
+
+\subsubsection*{Combinations}
+To combine transformations we can multiply transformation matrices. The order that the 
+transformations will happen will be the order you multiply them in. i.e $\textbf{A}\textbf{B}$
+means transformation \textbf{A} will be applied before \textbf{B}.
+
+\subsection*{Determinants}
+Determinants are a property of matrices that can help you to understand a matrix transform.
+In 2D, it will tell you the ratio of the areas of the matrix and the transformed matrix.
+In 3D, it will tell you the ratio of the volumes. 
+In other words, `determinants give scale'.
+Additionally note, A negative determinant means the area or volume will be inverted.
+
+\subsubsection*{Calculating Determinants}
+\begin{equation*}
+  \det
+  \begin{bmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\
+  \end{bmatrix}
+  = a_{11} \times a_{22} - a_{12} \times a_{21} \\
+\end{equation*}
+\begin{equation*}
+  \det
+  \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33} \\
+  \end{bmatrix}
+  = a_{11} \times 
+  \begin{vmatrix}
+    a_{22} & a_{23} \\
+    a_{32} & a_{33} \\
+  \end{vmatrix}
+    - a_{12} \times 
+  \begin{vmatrix}
+    a_{21} & a_{23} \\
+    a_{31} & a_{33} \\
+  \end{vmatrix}
+    + a_{13} \times
+  \begin{vmatrix}
+    a_{21} & a_{22} \\
+    a_{31} & a_{32} \\
+  \end{vmatrix}
+\end{equation*}
+
+\subsection*{The Identity Matrix}
+The identity matrix \textbf{I} is a matrix that when multiplied with any other matrix will
+return that matrix. It is analogous to the scalar `one'. An identity matrix will contain 
+a single line of 1s through the leading diagonal and 0s on either side i.e for a 2x2 matrix:
+\begin{equation*}
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+  \end{bmatrix}
+\end{equation*}
+
+\subsection*{Inverses}
+An inverse given by $\textbf{A}^{-1}$ reverses the transformation performed by \textbf{A}
+hence $\textbf{A}^{-1}$ (if it exists) is the inverse transformation of \textbf{A}. When 
+you multiply any inverse $\textbf{A}^{-1}$ by \textbf{A} it should return the identity 
+matrix \textbf{I}.
+\subsubsection*{Calculating Inverses}
+\begin{equation*}
+  \begin{bmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\
+  \end{bmatrix}
+  ^{-1}
+  =
+  \frac{1}{
+    \begin{vmatrix}
+      a_{11} & a_{12} \\
+      a_{21} & a_{22} \\
+    \end{vmatrix}
+  }
+  \begin{bmatrix}
+      a_{22} & -a_{12} \\
+      -a_{21} & a_{11} \\
+  \end{bmatrix}
+\end{equation*}
+
 \end{document}
