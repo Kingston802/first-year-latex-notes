@@ -1,8 +1,8 @@
 \documentclass[12pt] {article}
-\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsmath, amssymb, amsfonts, parskip}
 \begin{document}
 
-\title{Modelling Process Notes}
+\title{Mathematical Modelling Notes}
 \author{Alexander Bailey}
 \maketitle
 
@@ -24,20 +24,87 @@ Given (key factors and assumptions), Find (the value you're asked to find)
 x \propto y,1/z \implies x = \frac{ky}{z} 
 \end{equation*}
 
+\newpage
 \subsection*{Modelling Forces}
-Use Newton's 2nd law, subtract negative forces and add positive ones. Use the ones from the list.
+Use Newton's 2nd law, subtract negative forces and add positive ones. These are some common models:
+
+\begin{center}
+\begin{tabular}{c|c}
+  Force & Model \\
+  Gravity & $f_g = mg$ \\
+  Spring & $f_s = -kx$ \\
+  Friction & $f_f = \mu f_n $ \\
+  Buoyancy & $f_b = \rho V g$ \\
+  Drag Force & $f_d = -cv $ \\
+  Drag Force & $f_d = cv^2 $ \\
+\end{tabular}
+\end{center}
 
 \section{Differentiation}
-\subsection*{Implicit Differentiation}
 \subsection*{Series and Approximation}
+These infinite series allow you to approximate any function for as many or as few terms as you like.
+It can be important for these questions to remember that `linear' means 2 terms, `quadratic' means 3 terms and `cubic' means 4.
+\subsubsection*{Maclaurin Series}
+The Maclaurin Series is an approximation that is accurate around $x=0$, it is a special case of the Maclaurin Series.
+\begin{equation*}
+  f(x)=f(0)f'(0)x+\frac{f''(0)}{2!}x^2+\frac{f'''(x)}{3!}x^3 \dotsc
+\end{equation*}
+\subsubsection*{Taylor Series}
+The Taylor Series is an approximation that is accurate around $x=a$.
+\begin{equation*}
+  f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2 + \frac{f'''(0)}{3!}(x-a)^3 \dotsc
+\end{equation*}
+\subsubsection*{Binomial Series}
+You will likely have to manipulate/factor your expression to get into the binomial form.
+\begin{equation*}
+  (1+x)^n = 1 + \frac{n}{1!}x + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!}x^3 \dotsc
+\end{equation*}
+\subsection*{Implicit Differentiation}
+Implicit Differentiation is simply differentiating term by term for implicit equations.
+That is, equations that have both $x$ and $y$ on either side of the equation. e.g.
+\begin{gather*}
+  \text{Finding } \frac{dy}{dx} \text{ for } x^2-2x+2y^3=1 \\
+  2x\frac{dx}{dx} -2\frac{dx}{dx} +6y^2\frac{dy}{dx}=0 \\
+  \implies \frac{dy}{dx} = \frac{1-x}{3y^2}
+\end{gather*}
 \subsection*{Numerical Differentiation}
+Numerical Differentiation essentially comes down to manipulation of the definition of a derivative. Mostly using these 4 equations:
+\begin{equation*}
+  f'(x) \approx \frac{f(x+h)-f(x)}{h} \text{ (first forward difference)}
+\end{equation*}
+\begin{equation*}
+  f'(x) \approx \frac{f(x)-f(x-h)}{h} \text{ (first backward difference)}
+\end{equation*}
+\begin{equation*}
+  f'(x) \approx \frac{f(x+h)-f(x-h)}{h} \text{ (first central difference)}
+\end{equation*}
+\begin{equation*}
+  f''(x) \approx \frac{f(x+h)-2f(x)+f(x-h)}{h^2} \text{ (second central difference)}
+\end{equation*}
 \section{Integration}
 \subsection*{Integration Techniques}
 \begin{enumerate}
-  \item U substitution 
-  \item Integration by Parts
+  \item $u$ substitution $dx=du\dotsc$
+  \item Integration by Parts $\int u \frac{dv}{dx} dx = uv - \int v \frac{du}{dx}dx$
 \end{enumerate}
 \subsection*{Partial Fractions}
+Partial Fractions is a method to split up rational functions into easy to integrate functions. 
+It comes in 3 different forms:
+\subsubsection*{Simple Form}
+\begin{equation*}
+\frac{p(x)}{(x-a)(x-b)(x-c)\dotsc} = \frac{A}{x-a} + \frac{B}{x-b} + \frac{C}{x-c} + \dotsc
+\end{equation*}
+\subsubsection*{Repeated Factors}
+\begin{equation*}
+  \frac{p(x)}{(x-a)(x-b)^3\dotsc} = \frac{A}{x-a} + \frac{B_1}{x-b} + \frac{B_2}{(x-b)^2} + \frac{B_3}{(x-b)^3} \dotsc
+\end{equation*}
+\subsubsection*{Irreducible quadratic factors}
+\begin{equation*}
+  \frac{p(x)}{(x-a)(x^2+bx+c)} = \frac{A}{x-a} + \frac{Bx+c}{x^2+bx+c} + \dotsc
+\end{equation*}
+\subsubsection*{The cover-up rule}
+When the denominator of the split up fraction is of the form $x-a$ you can `cover-up' that factor in the denominator
+and then plugin the $x$ value from $x-a=0$ and solve. This will give you the `A' value.
 
 \section{Ordinary Differential Equations}
 Ordinary differential equations are equations containing one or more functions of one independent variable. 
@@ -148,7 +215,71 @@ will always sum to one i.e
 \end{equation*}
 
 \section{Vectors}
-\newpage
+Vectors are a special case of matrices that only involve one column (for column vectors)
+or one row (row vectors). It is usually described as a directed length or arrow i.e 
+it has both direction and magnitude! Vectors can be written in a number of ways:
+\begin{gather*}
+  a\hat{\imath} + b\hat{\jmath} + c\hat{k} \\
+  \begin{bmatrix} 
+    a \\
+    b \\ 
+    c \\
+  \end{bmatrix} \\
+  \begin{bmatrix}
+    a &
+    b & 
+    c &
+  \end{bmatrix} 
+\end{gather*}
+
+The magnitude (length) of a vector is given by 
+\begin{equation*}
+  \sqrt{a^2+b^2+c^2}
+\end{equation*}
+The dot product of two vectors is described by the formula
+\begin{equation*}
+  \begin{bmatrix}
+    a \\
+    b \\ 
+    c \\
+  \end{bmatrix} \cdot
+  \begin{bmatrix}
+    d \\
+    e \\ 
+    f \\
+  \end{bmatrix}
+  = a\times d + b\times e + c \times f 
+\end{equation*}
+Note that this formula works for vectors of all sizes. The dot product can also be defined 
+geometrically as $|a||b|\cos\theta$ where a and b are the two input vectors.
+
+The cross product of two vectors is given by 
+\begin{equation*}
+  \begin{bmatrix}
+    a \\
+    b \\ 
+    c \\
+  \end{bmatrix} \times 
+  \begin{bmatrix}
+    p \\
+    q \\ 
+    r \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    br-cq \\
+    -(ar-cp) \\ 
+    aq-bp \\
+  \end{bmatrix}
+\end{equation*}
+The cross product returns a vector that is normal to both of the input vectors. It has a magnitude 
+$|a||b|\sin\theta$ where a and b are the two input vectors.
+
+The projection of u onto v (the amount u in the direction of v) is given by
+\begin{equation*}
+  (\frac{u\cdot v}{v\cdot v})v
+\end{equation*}
+
 \section{Matrices}
 Vectors are just a special case of Matrices (one column/row) so a lot of their properties
 are shared with matrices. For instance, addition/subtraction are performed component wise 
