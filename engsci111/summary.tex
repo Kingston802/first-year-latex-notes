@@ -17,7 +17,7 @@ e.g. 'Total length of wood is not reduced when it is cut'
 or 'There are no significant currents' 
 
 \subsection*{Precise Problem Statement}
-Given (key factors and assumptions), Find (the value you're asked to find)
+Given (key factors, assumptions and values needed to solve), Find (the value you're asked to find)
 
 \subsection*{Formulating a Model}
 \begin{equation*}
@@ -40,12 +40,60 @@ Use Newton's 2nd law, subtract negative forces and add positive ones. These are 
 \end{tabular}
 \end{center}
 
+\subsection*{Dimensions}
+By performing dimensional analysis, we can produce a model or determine the dimension of a property. Some common dimensions include,
+
+\begin{center}
+\begin{tabular}{c|l}
+  Length & $L$ \\
+  Mass & $M$ \\
+  Time & $T$ \\
+  Temperature & $\theta$ \\
+  Area & $L^2$ \\
+  Density & $\frac{M}{L^3}$ \\
+  Force & $\frac{ML}{T^2}$ \\
+  Energy & $\frac{ML^2}{T^2}$ \\
+\end{tabular}
+\end{center}
+
+\section{Probability}
+\subsection*{Some General Rules}
+\begin{align*}
+  Pr(A \vert B) &= \text{Probability of A happening given B has already happened} \\
+                &= \frac{Pr(A\&B)}{Pr(B)} \\
+  Pr(A \& B) &= Pr(A) \times Pr(B) \text{ If they are independent}
+\end{align*}
+\subsection*{Continuous Random Variables}
+Continuous Random Variables that are infinite i.e height as there are an infinite amount 
+of possible heights with infinite accuracy. When graphed the area under a graph (probability density function)
+will always sum to one i.e
+\begin{equation*}
+  \int_\infty^\infty f(x)dx = 1 
+\end{equation*}
+
+\subsection*{PDFs and CDFs}
+The probability density function (PDF) is the density of a continuous random variable, it provides
+a value for a `probability' that the random variable would equal a given sample. The integral
+of a PDF is the cumulative distribution function (CDF) gives the probability for less than or greater than
+the given sample.
+
+\subsection*{Frequency/Probablity Trees}
+A probability tree is a tree in which you label edges with the probability of an event
+and label vertices with each event. A frequency tree is very similar but you multiply
+those probabilities by some fixed amount i.e 1000 people etc. These will carry through so you
+multiply the number in the parent vertex by the amount on that edge. 
+
+\subsection*{Bayes Theorem}
+\begin{equation*}
+  Pr(A \vert B) = \frac{Pr(A)}{Pr(A)Pr(B \vert A) + Pr(~A)Pr(B \vert ~A)}
+\end{equation*}
+
 \section{Differentiation}
 \subsection*{Series and Approximation}
 These infinite series allow you to approximate any function for as many or as few terms as you like.
 It can be important for these questions to remember that `linear' means 2 terms, `quadratic' means 3 terms and `cubic' means 4.
 \subsubsection*{Maclaurin Series}
-The Maclaurin Series is an approximation that is accurate around $x=0$, it is a special case of the Maclaurin Series.
+The Maclaurin Series is an approximation that is accurate around $x=0$, it is a special case of the Taylor Series.
 \begin{equation*}
   f(x)=f(0)f'(0)x+\frac{f''(0)}{2!}x^2+\frac{f'''(x)}{3!}x^3 \dotsc
 \end{equation*}
@@ -169,7 +217,7 @@ Exponential Substitution allows you to solve a 2nd order O.D.E using something c
 a `characteristic equation'. You substitute in a trial solution $e^{\lambda t}$
 and then complete the substitution (differentiate) and then divide through by your 
 trial solution leaving you with the characteristic equation which you can then solve for
-$\lambda$. You then substitute your values into the equation:
+$\lambda$ (note: if both solutions are negative, it is called `stable'). You then substitute your values into the equation:
 \begin{equation*}
   x=C_1e^{\lambda t} + C_2e^{\lambda t} \\
 \end{equation*}
@@ -195,24 +243,6 @@ This is a general solution, to calculate the exact solution you need two points
   \frac{dy}{dx} + p(x)y = r(x) \text{ has solution } y = e^{-h(x)} \int e^{h(x)}r(x)dx
 \end{equation*}
 
-\section{Probability}
-\subsection*{Some General Rules}
-\begin{align*}
-  Pr(A \vert B) &= \text{Probability of A happening given B has already happened} \\
-                &= \frac{Pr(A\&B)}{Pr(B)} \\
-  Pr(A \& B) &= Pr(A) \times Pr(B) \text{ If they are independent}
-\end{align*}
-\subsection*{Continuous Random Variables}
-Continuous Random Variables that are infinite i.e height as there are an infinite amount 
-of possible heights with infinite accuracy. When graphed the area under a graph (probability density function)
-will always sum to one i.e
-\begin{equation*}
-  \int_\infty^\infty f(x)dx = 1 
-\end{equation*}
-\subsection*{Bayes Theorem}
-\begin{equation*}
-  Pr(A \vert B) = \frac{Pr(A)}{Pr(A)Pr(B \vert A) + Pr(~A)Pr(B \vert ~A)}
-\end{equation*}
 
 \section{Vectors}
 Vectors are a special case of matrices that only involve one column (for column vectors)
