@@ -1,10 +1,10 @@
 \documentclass[a4paper, 12pt]{article}
-\usepackage{graphicx, amsmath, amssymb, parskip}
-\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\usepackage{../../template/NotesTeX}
 \begin{document}
 
-\title{Intro to Statics}
+\title{Statics}
 \author{Alexander Bailey}
+\emailAdd{alexkingstonbailey@gmail.com}
 \maketitle
 \begin{center}
 \textit{Capacity must exceed demand}
@@ -18,21 +18,21 @@ Statics is largely derived from Newton's second and third laws that state:
     \item Forces of action and reaction are equal in magnitude and opposite in direction between two interacting rigid bodies.
 \end{itemize}
 
-\section{Defining a Force}
+\section{Force Systems}
+\subsection{Defining a Force}
 A force is "the action of one body upon another". Forces are vectors, they have both a magnitude and a direction.
 Alternatively, it could be described as "an interaction that, when unopposed, will cause an object to move". 
 From Newton's second law $F=ma$, we can see that a force is a product of a vector (a) and a scalar (m) hence
-the direction of F is dependent on the direction of the acceleration. The units are as follows:  
-\begin{center}
+the direction of F is dependent on the direction of the acceleration. 
+\marginnote{
 \begin{tabular}{l|l}
     Acceleration & $m/s^2$ \\
     Mass & $kg$ \\
     Force & $N$ \\
     Force & $kg\cdot m/s^2$ \\
 \end{tabular}
-\end{center}
-\newpage
-\section{Force Systems}
+}[-2.8cm]
+\subsection{Force Calculations}
 Force systems are systems involving forces (wow). Force systems can be 'deterministic' meaning that the vertical and horizontal components and moments sum to zero.
 They can (generally) be solved in three different ways.
 Although sometimes one method will be much easier than the other. The three ways we have been taught are:
@@ -51,6 +51,37 @@ for whatever you need. The Sine and cosine rules are:
     \frac{\sin{A}}{\alpha} = \frac{\sin{B}}{\beta} 
 \end{equation*}
 
+\subsection{Resultants}
+In engineering it is more common to represent a set of forces acting on an object as its \textit{resultant} instead of individual forces.
+Hence you have a single vector with a magnitude and angle that could represent multiple forces acting on an object. 
+The resultant is simply the sum of all the forces acting on an object (adding the $x$ and $y$ components of course). 
+The difficulty with these problems comes from finding where to place the resultant on an object.
+\subsubsection{Where to place the resultant} 
+When beginning the problem, we chose a point of reference.
+Sensible points of reference will be the origin or a point where a force acts.
+Anywhere that you have data for will do but technically you can use any point.
+You can calculate $x$ and $y$ distances for the line of action with $X=\frac{M_r}{R_y}$,$Y=\frac{M_r}{R_x}$.
+This is simply a rearranging of the moments formula but let's do an example.
+
+\begin{example}
+Placing the resultant (see right)
+\marginnote{\includegraphics[scale=0.04]{4}}
+\begin{center}
+\begin{gather*}
+    \theta = \arctan{\frac{3}{5}} = 30.96 \\
+    R_x = 120\cos{60} - 100\cos{39.6} \\
+    R_y = 100\sin{30.96} + 120\sin{60} \\
+    |R| = \sqrt{R_x^2+R_y^2} = 157.49\unit{kN} \\
+    \theta_r = \arctan{\frac{R_y}{R_x}} = 99.4 \\
+    M_o = -500 + (120\sin{60}\cdot9) + (100\sin{59.04}\cdot4.5) + (100\cos{58.04}\cdot6) \\
+    M_o = 157.49\unit{kN} \\
+    X = \frac{M_0}{R_y} = 7.27\unit{m} \\
+    Y = \frac{M_0}{R_x} = 43.88\unit{m} 
+\end{gather*}
+\end{center}
+\end{example}
+
+\newpage
 \section{Moments}
 Moments are defined by: $M=Fd$.
 That is they are \textit{force $\times$ perpendicular distance}
@@ -63,13 +94,10 @@ Solving Moment Questions can be as easy as three (general) steps:
     \item Find the distance from the reference point for each force vector
     \item For each reference point, multiply the force components by their perpendicular distance and sum them 
 \end{enumerate}
-\newpage
 \subsection{Example}
-\begin{center}
-\includegraphics[scale=0.2]{topic-3}
-
-Finding the moment around A
-\end{center}
+\begin{example}
+Finding the moment about A
+\marginnote{\includegraphics[scale=0.15]{topic-3}}
 \begin{gather*}
     F_{2x} = 2\cos{30} \\ 
     F_{2y} = 2\sin{30} \\
@@ -88,39 +116,14 @@ Finding the moment around A
     M_a = 2\cos{30} \cdot 4 + -4 \cdot 1.5 + 3\cos{25} \cdot 5.4 - 3\sin{25} \cdot 4.5 \\ 
     M_a = 19.46 \unit{kNm}
 \end{gather*}
+\end{example}
+
+\newpage
 \subsection{Couples}
 A couple is two forces that have equal magnitude but opposite direction, but that do not have the same line of action.
 These forces sum to zero, but generate a moment. The value of a moment is simply the moments of the two forces subtracted from one another.
 Or, alternatively, The magnitude of the two forces times by the distance between them.
 COUPLES HAVE NEVER BEEN IN A 121 EXAM BEFORE.
-
-\section{Resultants}
-In engineering it is more common to represent a set of forces acting on an object as its \textit{resultant} instead of individual forces.
-Hence you have a single vector with a magnitude and angle that could represent multiple forces acting on an object. 
-The resultant is simply the sum of all the forces acting on an object (adding the $x$ and $y$ components of course). 
-The difficulty with these problems comes from finding where to place the resultant on an object.
-\subsection{Where to place the resultant} 
-When beginning the problem, we chose a point of reference.
-Sensible points of reference will be the origin or a point where a force acts.
-Anywhere that you have data for will do but technically you can use any point.
-You can calculate $x$ and $y$ distances for the line of action with $X=\frac{M_r}{R_y}$,$Y=\frac{M_r}{R_x}$.
-This is simply a rearranging of the moments formula but let's do an example.
-
-\begin{center}
-\includegraphics[scale=0.04]{4}
-\begin{gather*}
-    \theta = \arctan{\frac{3}{5}} = 30.96 \\
-    R_x = 120\cos{60} - 100\cos{39.6} \\
-    R_y = 100\sin{30.96} + 120\sin{60} \\
-    |R| = \sqrt{R_x^2+R_y^2} = 157.49\unit{kN} \\
-    \theta_r = \arctan{\frac{R_y}{R_x}} = 99.4 \\
-    % M_o = -500 + (120\sin{60}\cdot9) + (100\sin{59.04}\cdot4.5) + (100\cos{58.04}\cdot6) \\
-    M_o = 157.49\unit{kN} \\
-    X = \frac{M_0}{R_y} = 7.27\unit{m} \\
-    Y = \frac{M_0}{R_x} = 43.88\unit{m} \\
-\end{gather*}
-\end{center}
-\newpage
 
 \section{Centroids}
 The centroid of a given shape is where the centre of gravity and mass act for a body of uniform thickness and density.
@@ -148,6 +151,7 @@ Rectangles are easy, just half the width or height and get your $\bar{x}$ or $\b
 Just make sure to account for where the rectangle is placed in reference to your origin.
 \subsubsection{Circles}
 Circles are very similar. Half the diameter. At the centre.
+\marginnote{\includegraphics[scale=0.05]{triangle}}[1.8cm]
 \subsubsection{Triangles}
 Triangles are a little harder. 
 A rule you can use is:
@@ -156,14 +160,9 @@ This is rather  intuitive because the centroid will obviously be closer to the s
 So for a triangle with a height of 4 and a width of 3 (assuming the skinny end is placed at the origin),
 the centroid will be at ($\bar{x}=2,\bar{y}=\frac{4}{3}$).
 
-\begin{center}
-\includegraphics[scale=0.05]{triangle}
-\end{center}
-
 \subsection{Example}
-\begin{center}
-\includegraphics[scale=0.15]{centroids}
-\end{center}
+\begin{example*}
+  \marginnote{\includegraphics[scale=0.15]{centroids}}
 \begin{equation*}
 \begin{gathered}
     A_1 = \frac{1}{2} \cdot 3 \cdot 6 = 9\\
@@ -185,6 +184,7 @@ the centroid will be at ($\bar{x}=2,\bar{y}=\frac{4}{3}$).
     \bar{x} = \frac{2 \cdot 9 + 6.333 \cdot 7.5 + 8.666 \cdot 6 + 2.333 \cdot 2 + 7 \cdot \pi + 30 \cdot 5.5 + 3.333 \cdot 4}{43.36} \\
 \end{gathered}
 \end{equation*}
+\end{example*}
 
 \section{Truss Problems}
 Structures contain members. A member is essentially anything that makes up the structure i.e a beam or support. 
@@ -193,6 +193,8 @@ three free-moving members and make a triangle and they can't move any longer. He
 member is either tension (T) or compression (C) and you must mark it as such in your calculations. 
 It may not be obvious which members are under which forces so we assume all members are under Tension 
 (forces act away from joint) and then if they come out negative mark it as Compression. 
+
+\newpage
 
 \subsection{Method of Joints}
 The method of joints is simply solving trusses and structures by evaluating the joints between members. 
@@ -209,6 +211,8 @@ you must ensure that when taking cuts, you cut through at least THREE members.
 The other thing is, you may want to cut through the members you are solving for. This makes 
 the forces readily available to solve. Additionally, make sure you check your reactions
 using $\sum F_v = 0$. 
+
+\begin{example*}
 \subsection{Example}
 \includegraphics[scale=0.5]{truss}
 \begin{align*}
@@ -229,19 +233,21 @@ using $\sum F_v = 0$.
     &-PL - 2P \cdot 1.5L + F_{CE} \cdot L = 0 \\
     &F_{CE} = \frac{2PL}{L} = 2P (T) \\
 \end{align*}
+\end{example*}
 
-\section{Distributed Loads}
+\section{Beam Problems}
+\subsection{Distributed Loads}
 Distributed loads are relatively easy. Almost ALL real loads are distributed but we model them as 
 simple point loads, this is what you'll do for all UDLs (Uniformly Distributed Loads) in this course. 
 The only thing other thing is triangular distributed loads or "linearly varying load" (LVL). We simply 
 replace these with two (or more) point loads.
 
-\subsection{Linearly Varying Loads}
+\subsubsection{Linearly Varying Loads}
 LVLs (read: triangle loads) are the only slightly annoying part of distributed loads. Just remember "$\frac{1}{3}$rd from 
 the fat end, $\frac{2}{3}$rds from the skinny end". The centroid is where the point mass will act. As for the magnitude 
 of the force, it is just the 'height' of the force per distance times it's length when split up.
 
-\subsection{Solving problems with distributed loads}
+\subsubsection{Solving problems with distributed loads}
 \includegraphics[scale=0.2]{lvl} \\*
 Splitting the triangle into a rectangle of height 3 and a triangle of height 2 
 \begin{align*}
@@ -252,7 +258,9 @@ Splitting the triangle into a rectangle of height 3 and a triangle of height 2
 \end{align*}
 Then you can use the forces to solve the rest of the problem (find $R_a$ etc)
 
-\section{Bending and Shear}
+\newpage 
+
+\subsection{Bending and Shear}
 Bending and Shear moment diagrams show the internal forces acting on a beam and are used
 for structural analysis. When making a cut through a beam in a static situation, the 
 internal forces must cancel the external forces. The BMD will be the integral of the SFD so
@@ -262,6 +270,10 @@ Here we can calculate internal forces as we move the cut along the beam.
 
 Positive bending will be like a happy face, negative bending (less commmon, also called hogging)
 is like a sad face. 
+
+\subsection{Supports}
+\includegraphics[scale=0.5]{supports}
+\includegraphics[scale=0.59]{supports-reactions}
 
 \section{Friction} 
 Friction is a force that opposes motion caused by the inherent imperfect roughness of two surfaces. 
@@ -275,6 +287,7 @@ would commence i.e the maximum friction force. Keep in mind, friction is a react
 The friction coefficient is usually stated or they might ask you to calculate it. The angle of the slop that will cause a body to slip down
 a slope regardless of weight is given by: $\phi = \arctan{\mu}$. Additionally, $\phi$ is the angle of the resultant of F (friction) and N (the normal force). 
 
+\begin{example*}
 \subsection{Example}
 \begin{align*}
     &W = 981N \\
@@ -288,9 +301,6 @@ a slope regardless of weight is given by: $\phi = \arctan{\mu}$. Additionally, $
     &\implies 0.3(921.8 + 0.342P) - 0.940P = -335.5 \\
     &\therefore P = \frac{-612.0}{-0.837} = 731N \\
 \end{align*}
-
-\section{Supports}
-\includegraphics[scale=0.5]{supports}
-\includegraphics[scale=0.59]{supports-reactions}
+\end{example*}
 
 \end{document}
