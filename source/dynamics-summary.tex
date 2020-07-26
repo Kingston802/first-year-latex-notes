@@ -1,0 +1,163 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\title{Dynamics Summary}
+\author{Alexander Bailey}
+
+\maketitle
+
+\section*{Kinematics of Particles}
+\par\noindent\rule{0.4pt}{0.4pt}
+\begin{center}
+\subsection*{THE SEVEN HOLY STEPS}
+\end{center}
+Here are Hazim's 7 holy steps for kinematics of particles:
+\begin{enumerate}
+    \item Identify provided information and what is required 
+    \item Sketch the motion and identify points of interest on the path 
+    \item Choose coordinate system
+    \item Construct the kinematic conditions table 
+    \item For each interval, identify the type of acceleration and choose the appropriate equations to solve
+    \item Solve equations for required information
+    \item Check that your answers make sense
+\end{enumerate}
+\noindent
+Ensure that when you integrate it is definite integration (with limits) because we will almost 
+always know the limits and it's preferred over indefinite integration. Additionally, ALWAYS draw a FBD for a question
+(or maybe a sketch of the motion) and note that you might want to draw a kinematics condition table for every
+part of a question as the conditions change.
+
+\begin{center}
+\subsection*{Rectilinear Motion}
+\end{center}
+Also called linear motion, rectilinear motion is motion in 1 dimension i.e a straight line.
+These kinematic equations form the basis of rectilinear motion:
+
+\begin{align*}
+    v = \frac{ds}{dt} \text{, }
+    a = \frac{dv}{dt} \text{, }
+    s = v\frac{ds}{dt}\\
+\end{align*}
+If acceleration is constant, we can derive these equations by integration:
+\begin{align}
+    v - v_0 = a(t-t_0) \\ 
+    v^2 - v_0^2 = 2a(s-s_0) \\ 
+    s - s_0 = v_0(t-t_0) + \frac{1}{2}a(t-t_0)^2
+\end{align}
+
+\noindent
+The general approach for a rectilinear motion question is detailed in the 7 holy steps but for the solution
+steps we will use any of the equations above (and maybe others, depending on the question). Acceleration (a) will 
+be one of four things: constant, a function of time, a function of velocity or a function of displacement. Each
+of these have different methods.
+
+\begin{enumerate}
+    \item Const.: use the above equations for constant velocity to solve 
+    \item a(t): solve $a = \frac{dv}{dt}$
+    \item a(v): solve $a = \frac{dv}{dt}$ or $vdv = ads$ depending on what you are solving for
+    \item a(s): solve $vdv = ads$ 
+\end{enumerate}
+
+\begin{center}
+\subsection*{Plane Curvilinear Motion}
+\end{center}
+\subsubsection*{Simple Projectile Motion}
+Simple Projectile Motion is for objects with no thrust or other forces. It is 'simple'.
+The primary assumptions are: $a_x=0$ and $a_y=-9.81$ ($a_y$ might changed based on where you put the positive y etc).
+The holy steps are the same as for rectilinear motion with just a few additional considerations. 
+We now must handle 2 dimensions. This means we consider for v (for example) both $v_x$ and $v_y$. 
+This will be the same for s, for a etc.
+
+\subsubsection*{Circular Motion}
+Circular Motion is a special case of curvilinear motion involving motion about a fixed point with constant radius. These rotational motion equations will be important:
+\begin{align}
+    v = r\omega \\
+    a_n = r \omega^2 = \frac{v^2}{r} \\
+    a_t = r\alpha 
+\end{align}
+\textbf{Normal Tangential Co-ordinates}
+\\
+\noindent
+It is almost always more convenient to use Normal Tangential (n-t) co-ordinates in circular motion problems.
+n-t co-ordinates place the origin at the particle, this means that we can't talk about displacement / position but
+we can more easily keep track of a particles velocity and acceleration when considering $a_t$ and $a_n$.
+\noindent
+The normal component is responsible for changing the direction of the vector. 
+It will always act towards the center and will always be positive (just look at the equation).
+The tangential component is responsible for changing the magnitude of the vector. 
+It will always act 'tangentially' i.e touching the circle at the particle and in the \textit{direction of motion}
+If the velocity of the particle is constant then the tangential acceleration is 0.
+
+\section*{Kinetics of Particles}
+
+\section*{Relative motion of particles}
+\begin{align*}
+  \underline{v}_A = \underline{v}_B + \underline{v}_{A/B} 
+\end{align*}
+The way to remember this is that the first letter is what you are looking for and the second is what you are relative to. 
+$v_{A/B}$ is read as "The velocity of A relative to B".
+\subsection*{THE SIX HOLY STEPS}
+\begin{enumerate}
+  \item Identify provided vector quantities and what is required 
+  \item State the relative motion to use 
+  \item Construct the kinematic conditions table 
+  \item Draw the velocity or acceleration diagram 
+  \item Solve equations (using sine/cosine or by vector methods) 
+  \item Check that your answers make sense
+\end{enumerate}
+\subsection*{Drawing velocity/acceleration diagrams}
+General conventions are on page 51 of the coursebook. Start from O (for origin, which is just some point),
+$v_{A/B}$ starts at b and ends at a, try and draw to scale. 
+
+\section*{Kinematics of Rigid Bodies}
+There are three types of motion for R.B. (Rigid  Bodies). 
+\begin{enumerate}
+  \item Pure Translation $\implies$ $\alpha$ = $\omega$ = 0 
+  \item Fixed-axis Rotation (F.A.R.) 
+  \item General Plane Motion (combination of the above) 
+\end{enumerate}
+
+For a rigid body we can only have one $\omega$, $\alpha$ but different linear velocities at points. In this course, 
+we only look at velocities as relative accelerations of R.B. is hard. Additionally, these equations could be useful:
+\begin{align}
+  |\underline{v}_{A/B}| = |\omega\underline{r}_{A/B}| \\
+  \underline{v}_{A/B} = \omega\times\underline{r}_{A/B}
+\end{align}
+The direction of $\underline{v}_{A/B}$ will be normal to  $\underline{r}_{A/B}$ in the direction of $\omega$.
+The seven holy steps of kinematics of particles still apply.
+The words "Rolling without Slip" imply: if point 'A' is on the wheel for any instant, $\underline{v}_{A/Sr}$ is 0.
+Generally, $\underline{v}_{Sr}$ will be 0.
+
+\section*{Kinetics of Rigid Bodies}
+The equation of motion that we have covered so far ($\sum F=ma$) relates forces to acceleration.
+In rotational motion, we can form the new equation: 
+\begin{equation}
+  \sum M_G = I_G\alpha
+\end{equation}
+Some important things to note: General Plane Motion is not considered in this course. 
+\subsection*{THE SEVEN HOLY STEPS}
+\begin{enumerate}
+  \item Identify provided information and what is required 
+  \item Draw a FBD, Note: Forces, Moments and Lines of Action
+  \item Choose coordinate system (including positive rotation)
+  \item State any kinematic constraints
+  \item Write equations of motions ($\sum F=ma$, $\sum M_G$) 
+  \item Solve equations for required motions
+  \item Check that your answers make sense 
+\end{enumerate}
+
+Example conditions include:
+\begin{enumerate}
+  \item Rolling without slip, velocity of the point touching the ground is zero
+  \item Pure Translational Motion, rotational acceleration is zero
+  \item Linking translational motion and rotational motion, some equation
+\end{enumerate}
+The general addition in kinetics of rigid bodies is the use of moments to solve problems.
+Look at the statics notes for more on moments. Otherwise, look to kinetics of particles for more.
+
+\end{document}
+
+

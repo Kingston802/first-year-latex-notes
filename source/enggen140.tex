@@ -1,0 +1,230 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath, amssymb, parskip, hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
+
+\begin{document}
+\section*{Convention}
+\begin{itemize}
+  \item Your workings must be neat and easily understood. 
+  \item All calculations must include formulas.
+  \item All values must be stated in your solutions.
+  \item Assumptions must be stated in your solutions.
+  \item Pay attention to small details, such as the difference between $\dot{W}$ and $W$
+  \item All explanations can be as simple as bullet point style.
+  \item Significant figures must be determined and stated next to the result. 
+  \item Use the sign conventions of the course. i.e. when work leaves a system, it is negative.
+  \item $\Delta$ in this course means `initial - final'.
+  \item Draw block diagrams
+  \item Define system boundaries
+\end{itemize}
+\section*{Systems, DoF, Energy}
+L1, L2, L3
+\begin{itemize}
+  \item Definitions and units 
+  \item System Principles
+  \begin{itemize}
+    \item Accumulation
+    \item Open/Closed systems
+    \item Block Diagrams
+    \item Energy Transfer via heat
+    \begin{itemize}
+      \item Conduction
+      \item Convection 
+      \item Radiation 
+    \end{itemize}
+    \item Degrees-of-freedom analysis
+    \item Mass Balances
+  \end{itemize}
+\end{itemize}
+Mass Balance:
+
+$M = \text{in} - \text{out}$
+
+{\scriptsize where $M$ is the accumulation of the system\/}
+
+$\sum \dot{m}_{\text{in}} = \sum \dot{m}_{\text{out}}$
+
+{\scriptsize where $\dot{m}$ is the mass flow rate\/}
+
+DoF Analysis:
+$n_{\text{dof}} = n_{\text{unknowns}} - n_{\text{ind. eq}} - n_{\text{other eq.}}$
+
+{\scriptsize $n_{\text{dof}}=0$ means the problem is well defined \/}
+
+Total internal energy:
+$\Delta U = \Delta E - \Delta E_{\text{kin}} - \Delta E_{\text{pot}}$
+
+{\scriptsize Remember $\Delta$ is initial - final in this course\/}
+
+Enthalpy:
+$H = U + pV$
+
+{\scriptsize where $H$ is enthalpy, $U$ is internal energy, $p$ is pressure and $V$ is volume\/}
+
+
+\section*{Wind Power}
+L9, L10, L11
+\begin{itemize}
+  \item Social license to operate
+  \item Not in my backyard. Wind power is very loud/ugly.
+  \item Working principle of a turbine
+  \item creativity in wind
+\end{itemize}
+
+\section*{Creativity}
+L6, L10
+\begin{itemize}
+  \item Bend, Break, Blend
+\end{itemize}
+\subsection*{Creativity in wind}
+\begin{itemize}
+  \item Offshore wind
+  \item Large turbines
+  \item Flexible blades (inspired by insect)
+\end{itemize}
+
+\section*{Hydro}
+L4, L6
+\begin{itemize}
+  \item Renewable Energy Sources
+  \item Energy transfer through shaft work
+  \item Simplified mass and energy balance to find shaft work 
+  \item Calculation of power output through the potential kinetic energy per unit time of water 
+  \item Micro Hydro
+  \item Power density (electrical power generated per horizontal m\textsuperscript{2})
+\end{itemize}
+
+\section*{Solar}
+L12, L13
+\begin{itemize}
+  \item Solar as a renewable energy source
+  \item Power density of solar is relatively low
+  \item Application of energy balance 
+\end{itemize}
+% $P_{\text{in}} - P_{\text{max}}$
+
+$E_{\text{photon}} = \frac{hC}{\lambda}$
+
+Calculating properties of solar plants:
+
+$\eta_{\text{max}} = \frac{P_\text{max}}{P_\text{inc}}$
+
+$P_\text{max} = I_\text{max} \times V_\text{max}$
+
+$A = \frac{P_\text{required}}{P_\text{max}}$
+
+{\scriptsize where $P$ is power, $V$ is voltage, $I$ is current, $A$ is cell area, $\eta$ is Efficiency \/}
+
+\newpage
+\section*{Batteries}
+L14, L15, L16
+\begin{itemize}
+  \item Battery as energy storage solutions
+  \item Working principles of
+  \begin{itemize}
+    \item Galvanic Cell
+    \item PbA battery 
+    \item Li-ion battery 
+  \end{itemize}
+  \item Redox reactions, cell notion
+  \item OIL RIG
+  \item AnOX \& REDcat
+  \item Comparing values of Gibbs free energy shows where it is stored
+\end{itemize}
+Calculation of Gibbs free energy (if $\Delta_r G^\circ > 0$ then spontaneous)
+
+$\Delta_r G^\circ = \sum G^\circ_\text{products} - \sum G^\circ_\text{reactants}$
+
+EMF of a cell: $E^\circ_\text{cell} = E^\circ_\text{red} + E^\circ_\text{ox}$
+
+{\scriptsize $E^\circ$ = EMF = voltage = cell potential \/}
+
+Current equation: $It = v_enF$
+
+{\scriptsize where $I$ is the current during time $t$, $v_e$ is the number of electrons transferred, $n$ is the number of moles and $F=96500$ \/}
+
+\newpage
+\section*{Ethics}
+L L17
+\subsection*{Resource Management Act}
+Sections 5,6,7,8
+\subsection*{Ethics/Batteries}
+What materials go into a battery (or a solar panel) and where do they come from
+
+\href{https://www.engineeringnz.org/resources/code-ethical-conduct/}{Engineering NZ code of ethical conduct}
+
+\newpage
+\section*{Geothermal}
+L24, L25, L26, L29
+\begin{itemize}
+  \item Difference between a dry steam, flash and binary plant 
+  \item Fluid carries heat
+  \item Porosity of rock determines the amount of fluid in the rock
+  \item Permeability, Darcy's law for fluid flow 
+  \item The use of thermal energy not converted to electricity (direct use)
+\end{itemize}
+Stored heat equation:  
+$  Q = Ah\rho C(T_r-T_o) $
+
+{\scriptsize where $Q$ is the stored heat energy, $A$ is the area of the plant, $h$ is the depth of the plant, $\rho$ the density of the rock, $C$ is the specific heat capacity of the rock and $T_r$ and $T_o$ are the reservoir and lowest temperatures\/}
+
+Heat energy in the fluid:
+$  Q_{\text{fluid}} = \phi (h_{\text{fluid}}-h_o) $
+
+{\scriptsize where $Q_{\text{fluid}}$ is the heat energy stored in 1m\textsuperscript{3} of rock, $\phi$ is porosity and $h$ is enthalpy\/}
+
+Darcy's Law:
+$ Q = \frac{kA}{\mu} \frac{dp}{dx} $
+
+{\scriptsize where k is permeability, A is area, $\mu$ the dynamic viscosity and $\frac{dp}{dx}$ the pressure gradient\/}
+
+\section*{Heat Engines}
+L21
+\begin{itemize}
+  \item Carnot cycle (ideal world)
+  \item Rankine cycle (real world, power plants)
+  \item Working principle:
+\end{itemize}
+4-step cyclic process where working fluid is continuously vaporized and condensed 
+to run a steam turbine that extracts shaft work.
+\begin{itemize}
+  \item Steam tables and phase transition diagram
+  \item Application of mass and energy balance
+\end{itemize}
+
+\textit{Energy Balance}
+\begin{equation*}
+  \Delta \dot{E}_{\text{System}} = \dot{E}_{\text{in}} - \dot{E}_{\text{out}}  
+\end{equation*}
+\begin{equation*}
+0 = \sum[\dot{m}_{\text{in}}(\frac{1}{2} v_{\text{in}}^2+gh_{\text{in}} + \hat{H}_{\text{in}})] - \sum[\dot{m}_{\text{out}}(\frac{1}{2} v_{\text{out}}^2+gh_{\text{out}} + \hat{H}_{\text{out}})] + \dot{Q} + \dot{W}_{\text{S}} + \dot{W}_{\text{EC}}
+\end{equation*}
+
+\section*{Biofuels}
+L22, L23
+\begin{itemize}
+  \item Biomass from biofuels
+  \item Working principle of a CHP plant
+  \item Terminology, formation of biomass and chemical reactions
+  \item Application of mass and energy balances
+  \item Ideal Gas Law, Gibbs Free Energy
+  \item Entropy
+\end{itemize}
+
+\section*{Decision Making}
+L27, L28
+\begin{itemize}
+  \item Multicriteria Decision Making
+  \item Lexographic Method
+  \item Dominance Graphs
+  \item Probability Distributions
+\end{itemize}
+\end{document}
+
+

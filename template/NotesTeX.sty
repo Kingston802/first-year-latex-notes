@@ -26,7 +26,7 @@
 
 \usepackage[T1]{fontenc}                            % Font Styling
 \usepackage{lmodern,mathrsfs}
-\usepackage{silence} % Peace time 
+\usepackage{silence, parskip} % Peace time 
 
 \usepackage[shortlabels]{enumitem}
 
@@ -93,8 +93,18 @@
   {}%
   {}%
   {\sffamily\bfseries}%
+  {\\}%
+  {0pt}%
   {}%
-  { }%
+
+\newtheoremstyle{mystyle*}%
+  {}%
+  {}%
+  {}%
+  {}%
+  {\sffamily\bfseries}%
+  {}%
+  {0pt}%
   {}%
 
 \renewenvironment{proof}{{\sffamily\bfseries Proof. }}{\qed}
@@ -111,6 +121,10 @@
   \newtheorem{theorem}{Theorem}[section]
 }
 
+\theoremstyle{mystyle*}{
+  \newtheorem*{theorem*}{}
+}
+
 \theoremstyle{mystyle}{
   \newtheorem{lemma}[theorem]{Lemma}
 }
@@ -119,13 +133,17 @@
   \newtheorem*{example}{Example}
 }
 
-\theoremstyle{mystyle}{
+\theoremstyle{mystyle*}{
   \newtheorem*{example*}{}
 }
 
 \theoremstyle{definition}{
-    \newtheorem*{exercise}{Exercise}}
+  \newtheorem*{exercise}{Exercise}
+}
 
+\theoremstyle{mystyle*}{
+  \newtheorem*{definition*}{}
+}
 
 \tcolorboxenvironment{definition}{
   boxrule=0pt,
@@ -138,8 +156,30 @@
   after skip=10pt,
   breakable,
 }
+\tcolorboxenvironment{definition*}{
+  boxrule=0pt,
+  boxsep=2pt,
+  colback={White!90!Cerulean},
+  enhanced jigsaw, 
+  borderline west={2pt}{0pt}{Cerulean},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  breakable,
+}
 
 \tcolorboxenvironment{theorem}{
+  boxrule=0pt,
+  boxsep=2pt,
+  colback={White!90!Dandelion},
+  enhanced jigsaw, 
+  borderline west={2pt}{0pt}{Dandelion},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  breakable,
+}
+\tcolorboxenvironment{theorem*}{
   boxrule=0pt,
   boxsep=2pt,
   colback={White!90!Dandelion},
