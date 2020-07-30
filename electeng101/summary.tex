@@ -2,6 +2,7 @@
 \usepackage{../template/NotesTeX}
 \begin{document}
 \setlength{\parskip}{\baselineskip}%
+\graphicspath{ {/home/ab/school/notes/electeng101/} }
 
 \title{Electeng101}
 \author{Alexander Bailey}
@@ -20,7 +21,7 @@ Separation of charge causes a difference in electric potential energy.
 When this difference is applied to a closed circuit, charge will move around the circuit.
 The movement of charge through is called a current. 
 
-\textbf{Charge}
+\subsubsection{Charge}
 \begin{definition*}
   Electric charge is the physical property of matter that causes it to 
 
@@ -30,7 +31,7 @@ The movement of charge through is called a current.
 We (thanks to Benjamin Franklin) typically describe charge as having two states: postive (like a proton) and negative (like an electron).
 These are not inherent to the universe but are just what we have defined.
 Of course, the classic line is: `Like charges repel, opposite charges attract'.
-Modelling the wire as a pipe carrying water, charge would be the amount of water. 
+Modeling the wire as a pipe carrying water, charge would be the amount of water. 
 
 We model the strength of the electrostatic force as proportional to the charge of both particles and inversely proportional to the radius squared.
 This is known as Coulomb's Law.
@@ -42,7 +43,7 @@ This is known as Coulomb's Law.
 Charge is measured in Coulombs (symbol C).
 1C is is equivalent to approximately $6.3 \times 10^{18}$ electrons.
 
-\textbf{Current}
+\subsubsection{Current}
 \begin{definition*}
    Current is the rate of flow of charge represented by $i$ or $I$.
 \end{definition*}
@@ -63,7 +64,7 @@ Current gives Electrical Engineers an idea of how \textit{fast} energy is being 
 In the water analogy, current would be the speed of the water in the pipe. 
 
 \begin{theorem*}
-  Conventional Current 
+  \textbf{Conventional Current}
 
   Benjamin Franklin believed that electrical current was carried by positive charge `carriers', this led to \textit{centuries} of engineers using the wrong direction for current...
   Now we still use conventional current. BUT, electron flow is still in the other direction.
@@ -72,22 +73,36 @@ In the water analogy, current would be the speed of the water in the pipe.
 \end{theorem*}
 
 \begin{theorem*}
-  Double-subscript notation
+  \textbf{Double-subscript notation}
+  
+  This notation indicates the directions charges are flowing in the order of \textbf{from} and \textbf{to}. 
+  \begin{equation*}
+    I_{ab} 
+  \end{equation*}
+  $I_{ab}$ is the current flowing from a to b.
 \end{theorem*}
 
-Current Calculations 
+\begin{example}
+  \begin{gather*}
+    i = 0.5\unit{A } 
+    t = 8\unit{min} = 60 \times 8 \unit{seconds} = 480\unit{seconds} \\
+    i = \frac{dq}{dt} \\
+    \implies q = \int_0^{480}0.5dt = [0.5t]_0^{480} \\
+    \therefore q = 240\unit{C}
+  \end{gather*}
+\end{example}
 
-\textbf{Voltage}
+\subsubsection{Voltage}
 \begin{definition*}
   Voltage is the difference in electrical potential energy of each unit of charge between two points represented by $v$ or $V$.
 \end{definition*}
 
 Because a voltage is a difference, we must know what point in the circuit that the difference is measured relative to for it to make sense.
-Voltage is commonly called a potentiial difference (PD) and has units Joules per Coulomb ($\unit{jc}^{-1}$).
+Voltage is commonly called a potential difference (PD) and has units Joules per Coulomb ($\unit{JC}^{-1}$).
 Physically, it is the amount of energy lost or gained between two points. 
 Using our water analogy, voltage would be the pressure of the water in the pipe.
 
-Alessandro Volta decided that Joules per Coulomb ($\unit{jc}^{-1}$) was too difficult and gave us the \textit{Volt} (symbol V).
+Alessandro Volta decided that Joules per Coulomb ($\unit{JC}^{-1}$) was too difficult and gave us the \textit{Volt} (symbol V).
 Additionally, every voltage must be accompanied by a \textit{voltage arrow}. 
 This removes the ambiguity in which direction voltage is measured. 
 The voltage arrow points in the direction of a \textit{potential rise}.
@@ -95,12 +110,55 @@ The voltage arrow points in the direction of a \textit{potential rise}.
 The voltage at A, with respect to B, is $V_{AB}$. 
 
 \begin{theorem*}
-  Common Reference or Ground 
+  \textbf{Common Reference or Ground}
+
+  Voltages are always measured between two points.
+  It is convenient to define a reference where we can talk about voltages `at' a component.
+  The location of ground is arbitrary and does not affect the actual voltages in the circuit.
+  The `triangle' ground is for digital circuits while the `line' ground is for analog circuits.
 \end{theorem*}
+\begin{marginfigure}
+  \vspace{ -1.8cm }
+  \includegraphics[scale=0.2]{grounds}
+\end{marginfigure}
+
 
 \begin{example}
-  Voltage Drop Example
+  \begin{gather*}
+    v = 2 - 6 \\
+    v = iR \\
+    -4 = 2i \\
+    i = -2
+  \end{gather*}
 \end{example}
+\begin{marginfigure}
+  \vspace{ -1.5cm }
+  \includegraphics[scale=0.2]{example3}
+\end{marginfigure}
+
+\subsubsection{Resistance}
+
+When electrical charge flows through a material, it must lose energy as it repels and collides with other charges.
+The amount of energy lost depends on how `difficult' it is for the charge to flow. 
+This difficulty depends on many factors including: stability of valence electrons, temperature, length and area.
+These properties are summarised by \textit{resistance}.
+
+\begin{equation*}
+  v = i \times R 
+\end{equation*}
+
+The constant of proportionality $R$ from Ohm's Law is known as resistance. 
+From this law, we can see resistance has units of Resistance has $\frac{V}{A}$.
+We call this Ohms and give it the symbol Omega $(\Omega)$
+
+\begin{definition*}
+  \textbf{The Passive-Sign Convention}
+
+  When using Ohm's law there is an implicit sign convention that cannot be described by just the positive and negative symbols.
+  A current is taken to be in the direction of a voltage drop. 
+  This makes sense because charges can only lose energy through a resistor.
+\end{definition*}
+
 
 \subsection{Circuit Definitions}
 Here are some conventions used to describe all circuits:
