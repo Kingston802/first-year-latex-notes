@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{../template/NotesTeX}
+\graphicspath{ {/home/ab/school/notes/chemmat121/} }
 \begin{document}
 
 \title{Chemmat 121}
@@ -9,7 +10,218 @@
 \flushbottom
 
 \section{Deformation and structure of solids}
+\subsection{Strength}
+How much force can a material withstand before it fails?
+That's a materials strength.
+A material can fail in several ways but the two most common are fracturing and permanent deformation.
+
+  \includegraphics[scale=0.5]{force-types}
+  \begin{center}
+    Some types of force that a material/object can undergo
+
+    From left: Tension, Compression, Shear and a Combination.
+  \end{center}
+
+\subsection{Stress}
+Engineers typically talk about stress instead of forces because stress is just a force proportional to its area.
+Stress is represented by the greek letter sigma ($\sigma$) and is given by the force (F) divided by the cross-sectional area (A).
+
+\marginnote{Cross-sectional area is the area that is perpendicular to the applied force}
+
+\begin{equation*}
+  \sigma = \frac{F}{A} \\
+\end{equation*}
+
+\begin{example}
+  \begin{flalign*}
+    \text{Given: } m=25\unit{kg}, d=10\unit{mm} \\
+    A = \pi r^2 \\
+    A = \pi \times \frac{(0.01)^2}{2} \\
+    F = 25 \times 9.81 \\
+    \sigma = \frac{F}{A} \\
+    \sigma = 3,120,000 \unit{Pa} \\
+    \sigma = 3.12 \unit{MPa} \\
+  \end{flalign*}
+\end{example}
+
+\begin{marginfigure}
+  \vspace{-8cm}
+  \includegraphics[scale=0.3]{stressexample}
+\end{marginfigure}
+
+\subsection{Strain}
+Strain is how long something gets compared to its original size.
+Stress and strain are related very closely and the stress against strain graph is a very important thing to materials engineering.
+Strain is given by the change in length over the original length.
+
+\begin{equation*}
+  \epsilon = \frac{\Delta L}{L_o} 
+\end{equation*}  
+
+Strain is unitless but is commonly expressed as a percentage (\%).
+
+\begin{example}
+  \begin{align*}
+    \epsilon &= \frac{\Delta L}{L_o} \\
+             &= \frac{100.32\unit{mm}-100\unit{mm}}{100\unit{mm}} \\ 
+            &= \frac{0.32\unit{mm}}{100\unit{mm}} \\ 
+            &= 0.0032 \\
+            &= 0.32\% \\ 
+  \end{align*}
+\end{example}
+
+\subsection{Stress-Strain Curve}
+\includegraphics[scale=0.3]{stressvsstrain}
+
+\en{The area under the curve is $F\times d$ and gives the `toughness' which is approximately the energy required.}[-8cm]
+
+\en{Necking is a localised reduction in thickness, which reduces diameter, which reduces area, increasing stress. This causes it to fail.}[-4cm]
+
+\subsection{Poisson's Ratio}
+Poisson's ratio is the relationship between deformation for a given material. 
+It is a measure of the Poisson effect, that describes the expansion or contraction of a material in directions perpendicular to the direction of loading. 
+It has no units and is represented by the greek character `nu' ($\nu$).
+For most materials $\nu \approx 0.3$.
+
+\begin{equation*}
+\nu = \frac{-\epsilon_x}{\epsilon_z}
+\end{equation*}
+
+\subsection{Young's Modulus}
+The Young's Modulus of a material is a measure of the `stiffness'. 
+It is the gradient of the elastic part of the stress-strain curve for a given material.
+It has units of Pascals (Pa) and is represented by the capital letter E. 
+
+\begin{equation*}
+  E = \frac{\Delta \sigma}{\Delta \epsilon} 
+\end{equation*}
+\subsection{Steel}
+Steel has what is called a `discontinuous yield'.  
+This means at the yield strength there is a bit of `noise' and it moves a little randomly before becoming nonlinear. 
+
+\subsection{0.2\% Proof Stress}
+The 0.2\% Proof Stress of a material is a geometrical construct that is used when the yield stress of a material cannot be properly determined. 
+It is a very slight overestimate (generally) that can be calculated by drawing a line parallel to the actual curve at a strain of $0.002$ and finding the intersection with the original curve.
+This stress value is the approximation. 
+
+\subsection{Safety Factor}
+The safety factor is a scalar value that demonstrates how much more stress a material can hold relative to the requirement. 
+I.e. if, for example, $F \approx 1000\unit{N}$ the engineers might pretend $F = 2000N$. 
+This would gie a safety factor of 2.
+
+When the conditions of the material are more uncertain, you would want a higher safety factor.
+
+\subsection{Engineering Stress vs Real Stress}
+In engineering, we draw a stress-strain graph as going `down' after the ultimate tensile strength.
+In reality, because of the effect of necking, it goes up after this.
+As engineers, we use the model because it is easier to handle theoretically.
+
+\subsection{Ductility}
+Ductility is a measure of how much something can deform elastically (with 100\% recovery / without permanent deformation).
+The stress-strain graph of a ductile material will have a longer elastic section while a more brittle material (less ductile) will have a shorter one.
+It is generally described by one of two equations: 
+
+\begin{center}
+  \textbf{Percentage Elongation}
+\end{center}
+\begin{equation*}
+  = \frac{\Delta L}{L_o} \times 100\% 
+\end{equation*}
+
+\begin{center}
+  \textbf{Percentage Reduction in Area}
+\end{center}
+\begin{equation*}
+  = \frac{\Delta A}{A_o} \times 100\% 
+\end{equation*}
+
 \section{Microstructure and mechanical properties}
+\subsection{Crystal Structure}
+\begin{definition*}
+  If a material is crystalline, the atoms of a material have \textbf{LONG RANGE ORDER}. 
+  This means the material is made up of a crystal lattice made of repeating units called `unit cells'. 
+\end{definition*}
+
+There are 14 possible crystal arrangements but this course will only look at three. 
+We describe arrangements by looking at the unit cell. 
+The unit cell is a tessellating shape that has all the information to describe the entire lattice.
+
+The unit cell has 4 important properties: 
+\begin{itemize}
+  \item Number of atoms 
+  \item Co-ordination Number (The number of neighbours for the unit cell)
+  \item Unit Cell Dimension (The length of each side of the cell written `a')
+  \item Atomic Packing Factor (Amount of space taken up by the atoms)
+\end{itemize}
+
+\begin{equation*}
+  a = \text{ Atomic Packing Factor } = \frac{\text{volume of atoms}}{\text{volume of unit cell}}
+\end{equation*}
+
+\subsubsection{Body Centered Cubic} 
+Body Centered Cubic (BCC) has one atom at each corner of a cube and one right in the middle.
+\begin{marginfigure}
+  \vspace{ -1cm }
+  \includegraphics[scale=0.15]{bcc}
+\end{marginfigure}
+
+\begin{itemize}
+  \item Number of Atoms = $2 = 1 + 8 \times \frac{1}{8}$
+  \item Co-ordination Number = 8 
+  \item Unit cell dimension = $\frac{4R}{\sqrt{3}}$
+  \item APF = 0.68 = 0.68\%
+\end{itemize}
+
+\subsubsection{Face Centered Cubic}
+Face Centered Cubic (FCC) has one atom at each corner of a cube and one in the middle of each face of the cube.
+\begin{marginfigure}
+  \vspace{ -1cm }
+  \includegraphics[scale=0.11]{fcc}
+\end{marginfigure}
+
+\begin{itemize}
+  \item Number of Atoms = $4$
+  \item Co-ordination Number = 12 
+  \item unit cell dimension = $\frac{4R}{\sqrt{2}}$
+  \item APF = 0.74 = 0.74\%
+\end{itemize}
+
+\subsubsection{Hexagonal Close Packed}
+Hexagonal Close Packed (HCP) is a prism shape with hexagonal arrangements of atoms layered up.
+\begin{marginfigure}
+  \vspace{ -1cm }
+  \includegraphics[scale=0.1]{hcp}
+\end{marginfigure}
+
+\begin{itemize}
+  \item Number of Atoms = $6$
+  \item Co-ordination Number = 12 
+  \item APF = 0.74 = 0.74\%
+\end{itemize}
+
+\subsection{Density}
+Density is the degree of compactness of a substance. 
+The amount of mass you get for a given volume.
+The density of a material is its mass divided by its volume.
+\begin{equation*}
+  \rho = \frac{n.A}{V_c.N_a}
+\end{equation*}
+Where $n$ is the number of atoms per unit cell, $A$ is the atomic mass of the material, $V_c$ is the volume of the unit cell ($a^3$) and $N_a$ is Avrogado's Number.
+
+\begin{example}
+  Iron
+  \begin{gather*}
+    a = 0.286\unit{nm }, n = 2 \\
+    \rho = \frac{ 2 \times 55.85 }{(2.86\times10^{-8})^3 \times 6.023 \times 10^{23}} \\
+    \rho = 7.92\unit{g.cm}^{-3}
+  \end{gather*}
+  The real density of iron is 7.87$\unit{g.cm}^{-3}$ so this is a good estimate.
+\end{example}
+
+\subsection{Polymorphism}
+Materials that can exiist in more than one crystal form (can have lattices made up of different unit cells) are called polymorphic. 
+For example, Iron at room temperature has a BCC structure but at $912^\circ$C it has an FCC structure.
+
 \section{Phase diagrams and Alloying}
 \section{Strengthening mechanisms}
 \section{Engineering ceramics and glasses}

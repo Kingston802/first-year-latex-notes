@@ -27,16 +27,20 @@ The movement of charge through is called a current.
   experience a force when placed in an electromagnetic field. ($q$ or $Q$)
 \end{definition*}
 
-We typically describe charge as having two states: postive (like a proton) and negative (like an electron).
+We (thanks to Benjamin Franklin) typically describe charge as having two states: postive (like a proton) and negative (like an electron).
 These are not inherent to the universe but are just what we have defined.
 Of course, the classic line is: `Like charges repel, opposite charges attract'.
 Modelling the wire as a pipe carrying water, charge would be the amount of water. 
 
-We model the strength of the electrostatic force as proportional to the charge of both particles and inversely proportional to the radius squared i.e. 
+We model the strength of the electrostatic force as proportional to the charge of both particles and inversely proportional to the radius squared.
+This is known as Coulomb's Law.
 
 \begin{equation*}
   F \propto \frac{q_1q_2}{r^2}
 \end{equation*}
+
+Charge is measured in Coulombs (symbol C).
+1C is is equivalent to approximately $6.3 \times 10^{18}$ electrons.
 
 \textbf{Current}
 \begin{definition*}
@@ -53,9 +57,25 @@ Current is defined numerically as the number of charges flowing through a partic
 Mathematically, it is the derivative of the total number of charges $q$ passing through a given section over time $t$ (written as $\frac{dq}{dt}$).
 Current thusly has units of Coulombs per second ($\unit{Cs}^{-1}$) but Electrical Engineers have given this another name, the \textit{Ampere} (A).
 
+\marginnote{Ampere also gave us the name current!}
+
 Current gives Electrical Engineers an idea of how \textit{fast} energy is being used instead of how \textit{much} energy it has received\mn{Note that most electrical devices require a continuous supply of energy to function so speed is generally much more useful than amount }.
 In the water analogy, current would be the speed of the water in the pipe. 
 
+\begin{theorem*}
+  Conventional Current 
+
+  Benjamin Franklin believed that electrical current was carried by positive charge `carriers', this led to \textit{centuries} of engineers using the wrong direction for current...
+  Now we still use conventional current. BUT, electron flow is still in the other direction.
+  Because of relative motion, a movement of negative charge in one direction is the \textbf{same thing} as a movement of positive charge in the other direction.
+  Hence, it does not matter (for most things).
+\end{theorem*}
+
+\begin{theorem*}
+  Double-subscript notation
+\end{theorem*}
+
+Current Calculations 
 
 \textbf{Voltage}
 \begin{definition*}
@@ -63,8 +83,24 @@ In the water analogy, current would be the speed of the water in the pipe.
 \end{definition*}
 
 Because a voltage is a difference, we must know what point in the circuit that the difference is measured relative to for it to make sense.
-Voltage is commonly called a potentiial difference (PD) and has units Joules per Coulomb ($\unit{JC}^{-1}$).
+Voltage is commonly called a potentiial difference (PD) and has units Joules per Coulomb ($\unit{jc}^{-1}$).
+Physically, it is the amount of energy lost or gained between two points. 
 Using our water analogy, voltage would be the pressure of the water in the pipe.
+
+Alessandro Volta decided that Joules per Coulomb ($\unit{jc}^{-1}$) was too difficult and gave us the \textit{Volt} (symbol V).
+Additionally, every voltage must be accompanied by a \textit{voltage arrow}. 
+This removes the ambiguity in which direction voltage is measured. 
+The voltage arrow points in the direction of a \textit{potential rise}.
+
+The voltage at A, with respect to B, is $V_{AB}$. 
+
+\begin{theorem*}
+  Common Reference or Ground 
+\end{theorem*}
+
+\begin{example}
+  Voltage Drop Example
+\end{example}
 
 \subsection{Circuit Definitions}
 Here are some conventions used to describe all circuits:
