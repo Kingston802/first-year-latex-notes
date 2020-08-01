@@ -147,9 +147,10 @@ These properties are summarised by \textit{resistance}.
   v = i \times R 
 \end{equation*}
 
+From Ohm's Law, the amount of energy lost by the charges through a resistor is proportional to the rate at which charges slow through it.
 The constant of proportionality $R$ from Ohm's Law is known as resistance. 
 From this law, we can see resistance has units of Resistance has $\frac{V}{A}$.
-We call this Ohms and give it the symbol Omega $(\Omega)$
+We call this Ohms and give it the symbol Omega $(\Omega)$.
 
 \begin{definition*}
   \textbf{The Passive-Sign Convention}
@@ -158,7 +159,6 @@ We call this Ohms and give it the symbol Omega $(\Omega)$
   A current is taken to be in the direction of a voltage drop. 
   This makes sense because charges can only lose energy through a resistor.
 \end{definition*}
-
 
 \subsection{Circuit Definitions}
 Here are some conventions used to describe all circuits:
@@ -178,7 +178,7 @@ This means the voltage through a branch but we could also talk about the voltage
 \begin{center}
 \textbf{Closed}
 \end{center}
-The circuit has both flow of charge and energy transfer
+The circuit has both flow of charge and energy transfer.
 
 \begin{center}
 \textbf{Open}
@@ -194,6 +194,27 @@ The circuit could be disrupted, i.e there is an air gap with (theoretically) inf
 The circuit (or circuit section) has a 0v potential difference.
 This could mean a path of lower resistance meant no voltage `went' down that path or that voltages cancelled etc.
 \end{theorem*}
+
+\subsection{Components}
+
+\subsubsection{Ideal Wire}
+Ideal Wire has a resistance of 0$\Omega$. 
+This means that no energy is lost when a current goes through it. 
+
+\subsubsection{Voltage and Current Sources}
+These sources can receive or output an \textit{infinite} amount of energy without deviating from their specification.
+These are good models in most well-designed engineering applications because the sources are designed to operate within their limits.
+
+Ideal Voltage Sources maintain a constant voltage across its terminals.
+This means it will draw (or supply) whatever current is necessary to maintain that voltage.
+Don't connect them in parallel.
+
+Current sources don't actually exist.
+But they maintain a constant current through its terminals regardless of voltage. 
+This behaviour means that the voltage across it depends on the topology of the circuit.
+
+
+
 
 \subsection{Models}
 In Electrical Engineering (EE), a model is a description that communicates

@@ -219,8 +219,78 @@ Where $n$ is the number of atoms per unit cell, $A$ is the atomic mass of the ma
 \end{example}
 
 \subsection{Polymorphism}
-Materials that can exiist in more than one crystal form (can have lattices made up of different unit cells) are called polymorphic. 
+Materials that can exist in more than one crystal form (can have lattices made up of different unit cells) are called polymorphic. 
 For example, Iron at room temperature has a BCC structure but at $912^\circ$C it has an FCC structure.
+
+\newpage
+\subsection{Planes, Directions and Positions}
+Navigation around our crystal structures is based on a typical x,y,z orthogonal axis. 
+We can denote the postition of an atom using a typical three dimensional vector. 
+By convention, positions are denoted with round brackets.
+
+\begin{marginfigure}
+  \vspace{-1.5cm}
+  \includegraphics[scale=0.2]{positions}
+\end{marginfigure}
+
+
+\subsubsection{Directions}
+Directions in the lattice are defined with square brackets $[u,v,w]$.
+
+\begin{enumerate}
+  \item Draw a vector from the origin for the direction 
+  \item Project the length of the vector onto the unit cell axes 
+  \item Put this in terms of the coefficients 
+  \item Convert to integers (multiply by a constant)
+  \item Put in square brackets 
+\end{enumerate}
+
+\begin{example}
+  Projecting the length of the vector onto axes:
+  $1a$ $0b$ $\half c$
+
+  Put this in terms of co-efficients:
+  $1$ $0$ $\half$
+
+  Convert to integers (multiply by two):
+  2 0 1
+
+  Put in square brackets:
+  $[201]$
+\end{example}
+
+Note: Negative directions will have a bar over them (read `bar').  
+
+\begin{equation*}
+[1\bar{1}0]
+\end{equation*}
+
+\subsubsection{Planes}
+Planes in the lattice are defined by \textbf{Miller Indices} $(h,k,l)$.
+
+\begin{enumerate}
+  \item Work out the intercepts of the plane on the unit cell 
+  \item Take reciprocals of the intercepts 
+  \item Convert to integers (multiply by a constant)
+  \item Put in round brackets 
+\end{enumerate}
+
+\begin{example}
+  Intercepts: $1$ $-1$ $\infty$
+
+  Reciprocals: $1$ $-1$ $0$
+
+  Integers: $1$ $-1$ $0$
+
+  Round Brackets: $(1\bar{1}0)$
+\end{example}
+
+\subsubsection{Families}
+
+You can denote the `family' of a plane (all of the planes made up with these values). 
+Families of planes are denoted with curly brackets e.g. Cube Faces $\{100\}$.
+Families of directions are denoted with angle brackets e.g. $<100>$.
+
 
 \section{Phase diagrams and Alloying}
 \section{Strengthening mechanisms}
