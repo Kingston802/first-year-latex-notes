@@ -286,11 +286,72 @@ Planes in the lattice are defined by \textbf{Miller Indices} $(h,k,l)$.
 \end{example}
 
 \subsubsection{Families}
-
 You can denote the `family' of a plane (all of the planes made up with these values). 
 Families of planes are denoted with curly brackets e.g. Cube Faces $\{100\}$.
 Families of directions are denoted with angle brackets e.g. $<100>$.
 
+\subsection{Slip, Theoretical Strength and Defects}
+Recall that there are two types of deformation: Elastic and Plastic (In-elastic).
+Elastic Deformation springs back (recovers), Plastic Deformation does not.
+
+At the atomic level, Elastic Deformation is merely stretching the atomic bonds.
+Any further deformation is permanent (plastic, past the yield point) and results from a process called \textbf{slip}.
+In plastic deformation, atomic bonds are broken (and remade).
+
+\subsubsection{Theoretical Strength}
+We can can calculate the \textit{theoretical} strength of a material by evaluating the amount of energy needed to break and remake the atomic bonds.
+This is not a very good approximation. For example, the theoretical shear strength of pure iron is 10,000MPa but the measured shear strength of pure iron is 20MPa...
+Why is this? Imperfections.
+
+\subsection{Imperfections}
+There are a number of a different imperfections that DO happen within a lattice containing millions of atoms.
+This is what causes our theoretical strength and theoretical density to be off. 
+It is EXTREMELY difficult to get `pure' anything so this is true for any sample.
+
+\begin{itemize}
+  \item Point Defects
+    \begin{itemize}
+      \item Vacancy
+      \item Substitution
+      \item Interstitial Atom
+    \end{itemize}
+  \item Planar Defects (Dislocations, $\bot$)
+    \begin{itemize}
+      \item Edge Dislocation
+      \item Screw Dislocation
+    \end{itemize}
+\end{itemize}
+
+A vacancy is simply a missing atom in the lattice.
+A substitution is when a different atom is in the place of the atom that should be there. 
+Interstitial atoms are atoms that occupy a normally unoccupied site in a crystal lattice.
+
+\subsection{Slip}
+\begin{center}
+  \includegraphics[scale=0.2]{slip}
+\end{center}
+
+\marginnote{Explaining how Slip works is a common exam question. Draw these!}[-1.7cm]
+
+The model of slip we will use is the movement of dislocations.
+The movement of dislocations means that slip can occur more easily than in a perfect arrangement of atoms.
+Easy slip means that a material is easily plastic deformed, this means it is \textit{ductile}.
+
+
+\subsubsection{Slip Systems}
+Slip (dislocation movement) occurs most easily on closepack planes and in closepacked directions.
+Not all systems have closepacked planes so slip happens on the \textit{closest} packed plane  
+
+A slip system is a combination of planes and directions.
+For FCC, the closepacked planes are $\{111\}$\mn{A family of planes}.
+The closepacked directions on these planes are $<110>$\mn{A family of directions}.
+
+Hence, the main slip system for FCC is: $\{111\}<110>$
+
+The main slip system for BCC is: $\{110\}<111>$
+
+HCP structures have closepacked planes but they are all parallel.
+Slip is very difficult so HCP metals are often brittle. 
 
 \section{Phase diagrams and Alloying}
 \section{Strengthening mechanisms}

@@ -160,6 +160,25 @@ We call this Ohms and give it the symbol Omega $(\Omega)$.
   This makes sense because charges can only lose energy through a resistor.
 \end{definition*}
 
+\subsubsection{Power}
+Power is the rate at which electric charges gain or lose electric potential energy.
+Given that voltage is the difference in energy per $Q$ and current is the no. of $Q$ per sec, we can easily derive an equation for power:
+\begin{multicols}{2}
+\begin{equation*}
+  P = IV 
+\end{equation*}
+
+\begin{equation*}
+  P = \frac{dE}{dt} 
+\end{equation*}
+\end{multicols}
+Dimensionally, this quantity would be measured in Js$^-1$ (Joules per Second).
+This quantity is named the \textit{Watt} (symbol W) named after James Watt for his work with steam engines.
+
+There is an assumed sign convention with power.
+If V and I are in opposite directions then $p=vi$ otherwise $p=-vi$.
+This is the passive-sign convention again.
+
 \subsection{Circuit Definitions}
 Here are some conventions used to describe all circuits:
 
@@ -200,6 +219,8 @@ This could mean a path of lower resistance meant no voltage `went' down that pat
 \subsubsection{Ideal Wire}
 Ideal Wire has a resistance of 0$\Omega$. 
 This means that no energy is lost when a current goes through it. 
+This is obviously useful as a model for electrical engineering but causes problems with some cases.
+For example, connecting an ideal wire across the terminal of a voltage source creates a theoretically \textit{infinite} amount of energy.
 
 \subsubsection{Voltage and Current Sources}
 These sources can receive or output an \textit{infinite} amount of energy without deviating from their specification.
@@ -207,14 +228,12 @@ These are good models in most well-designed engineering applications because the
 
 Ideal Voltage Sources maintain a constant voltage across its terminals.
 This means it will draw (or supply) whatever current is necessary to maintain that voltage.
+Meaning the current is dependent on the topology of the circuit.
 Don't connect them in parallel.
 
-Current sources don't actually exist.
+Ideal Current sources don't actually exist.
 But they maintain a constant current through its terminals regardless of voltage. 
 This behaviour means that the voltage across it depends on the topology of the circuit.
-
-
-
 
 \subsection{Models}
 In Electrical Engineering (EE), a model is a description that communicates
