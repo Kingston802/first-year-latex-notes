@@ -175,9 +175,12 @@ Given that voltage is the difference in energy per $Q$ and current is the no. of
 Dimensionally, this quantity would be measured in Js$^-1$ (Joules per Second).
 This quantity is named the \textit{Watt} (symbol W) named after James Watt for his work with steam engines.
 
+\marginnote{Watt is the unit of power?}
+
 There is an assumed sign convention with power.
 If V and I are in opposite directions then $p=vi$ otherwise $p=-vi$.
 This is the passive-sign convention again.
+Sticking to that, a negative power is power supplied.
 
 \subsection{Circuit Definitions}
 Here are some conventions used to describe all circuits:
@@ -186,6 +189,7 @@ Here are some conventions used to describe all circuits:
 load & `destination' of the electricity i.e. a lightbulb \\
 topology & the nature of the connections between components \\
 nodes & the point where two or more components meet \\
+loop & a closed path starting and eventually returning to a node \\
 \end{tabular}
 
 When we are discussing values in a circuit, voltage is `across' a component, current is `through'. 
@@ -234,6 +238,61 @@ Don't connect them in parallel.
 Ideal Current sources don't actually exist.
 But they maintain a constant current through its terminals regardless of voltage. 
 This behaviour means that the voltage across it depends on the topology of the circuit.
+
+\subsection{Tools}
+There are a number of mathematical tools that we have developed to make solving circuits easier.
+
+\subsubsection{KCL}
+Kirchoff's Current Law describes the behaviour of current in a circuit, it is:
+\begin{theorem*}
+  The algebraic sum of the currents leaving any point in a circuit equals zero.
+\end{theorem*}
+This means the amount of charge arriving at any point in one second \textbf{must} equal the amount of charge leaving that point in one second.
+Therefore,
+\begin{equation*}
+  \sum I_{in} = \sum I_{out}
+\end{equation*}
+
+If we don't know the current direction, just make them all leaving and it the maths will show us if a current is entering because it will be negative.
+The general process is hence:
+
+\begin{enumerate}
+  \item Assign current directions 
+  \item Assign directions for voltages 
+  \item Form an equation in terms of $i_n$
+  \item Substitute unknowns for knowns using Ohm's Law 
+\end{enumerate}
+
+\subsubsection{KVL}
+Kirchoff's Voltage Law describes the behaviour of voltages in a circuit, it is:
+By the conservation of energy, energy gained in a circuit equals the energy lost.
+Therefore, the total voltage rises must equal the total voltage drops. Hence,
+
+\begin{theorem*}
+  The algebraic sum of the voltage rises around a loop in a circuit equals zero
+\end{theorem*}
+
+Once again, if we assume a direction we can solve for unknown directions.
+The process for KVL is generally:
+
+\begin{enumerate}
+  \item Assign voltage polarities 
+  \item Identify Loops
+  \item Form equations (taking voltage rises as positive)
+\end{enumerate}
+\begin{example}
+  \begin{align*}
+    &\text{Assign Voltage Polarities,}\\
+    &\text{Loop 1: } 5-(2I_1)-(-4I_2)-3=0 \\
+    &\text{Loop 2: } 3-(4I_2)-(-6I_3)=0 \\
+    &\text{Loop 3: } 5-(2I_1)-(-6I_3)=0 \\
+    &\text{Then you could solve simultaneously and using Ohm's Law}
+  \end{align*}
+\end{example}
+\begin{marginfigure}
+  \vspace{-5cm}
+  \includegraphics[scale=0.2]{kvl}
+\end{marginfigure}
 
 \subsection{Models}
 In Electrical Engineering (EE), a model is a description that communicates
