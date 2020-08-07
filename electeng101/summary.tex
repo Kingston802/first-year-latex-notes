@@ -147,10 +147,21 @@ These properties are summarised by \textit{resistance}.
   v = i \times R 
 \end{equation*}
 
+\marginnote{Thinner materials have a higher resistance!}
+
 From Ohm's Law, the amount of energy lost by the charges through a resistor is proportional to the rate at which charges slow through it.
 The constant of proportionality $R$ from Ohm's Law is known as resistance. 
 From this law, we can see resistance has units of Resistance has $\frac{V}{A}$.
 We call this Ohms and give it the symbol Omega $(\Omega)$.
+
+\begin{theorem*}
+  \textbf{Conductance}
+
+  Conductance is the inverse of resistance and has the symbol G. 
+  It has units of \textit{Siemens} symbol $S$.
+  It mostly exists so that you can add parallel conductances i.e for 2 2$S$ resistors in parallel, we have a conductance of 4$S$.
+  With conductance, we would write Ohm's Law as $i=\nu G$.
+\end{theorem*}
 
 \begin{definition*}
   \textbf{The Passive-Sign Convention}
@@ -159,6 +170,12 @@ We call this Ohms and give it the symbol Omega $(\Omega)$.
   A current is taken to be in the direction of a voltage drop. 
   This makes sense because charges can only lose energy through a resistor.
 \end{definition*}
+
+\begin{marginfigure}
+  \vspace{-1cm}
+
+  \includegraphics[scale=0.2]{convention}
+\end{marginfigure}
 
 \subsubsection{Power}
 Power is the rate at which electric charges gain or lose electric potential energy.
@@ -272,7 +289,7 @@ Therefore, the total voltage rises must equal the total voltage drops. Hence,
   The algebraic sum of the voltage rises around a loop in a circuit equals zero
 \end{theorem*}
 
-Once again, if we assume a direction we can solve for unknown directions.
+Once again, if we assume a direction we can solve for the unknown directions.
 The process for KVL is generally:
 
 \begin{enumerate}
@@ -286,13 +303,81 @@ The process for KVL is generally:
     &\text{Loop 1: } 5-(2I_1)-(-4I_2)-3=0 \\
     &\text{Loop 2: } 3-(4I_2)-(-6I_3)=0 \\
     &\text{Loop 3: } 5-(2I_1)-(-6I_3)=0 \\
-    &\text{Then you could solve simultaneously and using Ohm's Law}
+    &\text{Then you can solve simultaneously using KCL} \\
+    &\text{KCL: }-I_1 -I_2 = I_3 \\
   \end{align*}
 \end{example}
 \begin{marginfigure}
   \vspace{-5cm}
   \includegraphics[scale=0.2]{kvl}
 \end{marginfigure}
+
+\subsubsection{Terminal Behaviour}
+To analyse a circuit (determine current and voltage through every component), we need Kirchoff's laws and the \textit{terminal behaviour} of the components.
+From these, useful shortcuts and `tricks' have been developed.
+
+\subsubsection{Equivalent Resistance}
+Equivalent Resistance is a way of helping us model the behaviour of a circuit as a resistor.
+This is a simplification we can make, modelling a load as a static resistor value (no matter what the load actually is).
+We can do this because from the source's `perspective', it cannot tell the load apart from this fixed resistance.
+\marginnote{Series means there is only one path for the charges to flow through them (connected end-to-end)}
+
+In Series
+\begin{equation*}
+  r = r_1 + r_2 + \dots + r_n = \sum^N_{k=1} r_k
+\end{equation*}
+In Parallel
+\begin{equation*}
+  r = \frac{1}{\frac{1}{r_1} + \frac{1}{r_2} + \dots + \frac{1}{r_n}} = \frac{1}{\sum^N_{k=1}\frac{1}{r_k}}
+\end{equation*}
+
+\marginnote{Parallel components have both of their ends connected together}
+
+In series, r is always larger than any one of the components.
+In parallel, r is smaller than the smallest resistor contributing to the resistance. 
+
+We can use a systematic method to simplify compound circuits i.e.
+\begin{enumerate}
+  \item Begin as far away as possible from the source or component
+  \item Replace series or parallel resistors with equivalent resistors
+  \item Continue moving left and simplifying until we are left with only one
+\end{enumerate}
+
+\subsubsection{Voltage and Current Division}
+Voltage Division is an easy way to find the voltage over resistors in series.
+A voltage \textit{divider} is two (or more) resistors in series so $v_{\text{in}}$ is related to $v_{\text{out}}$ by a ratio dependent on the resistance.
+
+So for two resistors, where $v_1$ is the voltage drop on the first resistor and $v_2$ is the voltage drop on the second resistor:
+\begin{align*}
+  v_1 = (\frac{R_1}{R_1 + R_2})V_s \\
+  v_2 = (\frac{R_2}{R_1 + R_2})V_s \\
+\end{align*} 
+
+So for N resistors:
+\begin{align*}
+  v_p = (\frac{R_p}{R_1 + R_2 + \dots + R_p})V_s \\
+\end{align*} 
+
+\begin{marginfigure}
+  \vspace{-10cm}
+
+  \includegraphics[scale=0.3]{voltagedivider}
+\end{marginfigure}
+
+Current Division is an easy way to find the \textit{current} over resistors in parallel.
+Current in a current divider is related to a very similar ratio.
+
+So for N resistors:
+\begin{align*}
+  v_p = (\frac{\frac{1}{R_p}}{\frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_p}})I \\
+\end{align*} 
+
+\begin{marginfigure}
+  \vspace{-5cm}
+
+  \includegraphics[scale=0.3]{currentdivider}
+\end{marginfigure}
+
 
 \subsection{Models}
 In Electrical Engineering (EE), a model is a description that communicates
