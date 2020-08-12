@@ -378,6 +378,24 @@ So for N resistors:
   \includegraphics[scale=0.3]{currentdivider}
 \end{marginfigure}
 
+\subsubsection{Node-Voltage Analysis}
+Not all circuits can be simplified into series or parallel resistors.
+This brought around the need for node-voltage analysis.
+We of course could apply KCL and KVL to solve these circuits but these methods require some adhoc/non-systematic thinking.
+
+Node-voltage analysis is the use of KCL to find the voltages at nodes by expressing the currents through these nodes in terms of their voltages. 
+
+Essential nodes are nodes that are connected to \textit{three} or more paths. 
+
+\begin{enumerate}
+  \item Select one of the essential nodes as the reference (ground) node, in which all other node voltages will be calculated with respect to.
+  \item Write a KCL equation for each of the remaining essential nodes in terms of the unknown essential node voltages.
+  \item Solve the node-voltage equations simultaneously.
+\end{enumerate}
+
+\begin{example}
+
+\end{example}
 
 \subsection{Models}
 In Electrical Engineering (EE), a model is a description that communicates

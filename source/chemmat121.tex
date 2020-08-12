@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{../template/NotesTeX}
+\usepackage{physics}
 \graphicspath{ {/home/ab/school/notes/chemmat121/} }
 \begin{document}
 
@@ -488,7 +489,97 @@ Resistance changes with temperature and so there is a second equation that has $
   \rho_{\text{temp}} = \rho_0 (1+\alpha T)
 \end{equation*}
 
+Remember that resistivity will increase with cold work.
+This is because conduction in metals is due to electron drift and the velocity of that drift.
+Because work hardening causes increased dislocation density, electron movement is impeded.
+
+Conductivity can be expressed as the product of $n$ (the number of electrons), $\abs{e}$ (the size of the charge on an electron and $\mu$ which is the `mobility of electrons'. 
+\begin{equation*}
+  \sigma = n \times \abs{e} \times \mu 
+\end{equation*}
+
+\subsection{Annealing}Annealing is a heat treatment that allows you to recover the ductility of a material (while sacrificing yield strength).
+Annealing has three stages: Recovery, Recrystallisation and Grain Growth.
+We will discuss each.
+
+\begin{figure}[h]
+  \includegraphics[scale=0.4]{annealing}
+  \caption{From left to right: untreated, rolled, rolled and annealed}
+\end{figure}
+
+\subsubsection{Recovery}
+In this stage, the material recovers from the work-hardening. 
+The dislocation density does not change but rearranges to a lower energy configuration.
+
+\subsubsection{Recrystallisation}
+In the second stage, the metal is strain free.
+New `baby grains' nucleate at the grain boundaries.
+The driving force is the stored strain in the dislocations.
+These new grains expand until they are equiaxed with low dislocation density.
+Total recrystallisation occurs when just fully equiaxed.
+
+\subsubsection{Grain Growth}
+You can leave them to continue to grow for maximum ductility but this step is optional. 
+You can choose to make the metal more ductile with larger grains or leave it to be stronger.
+
+\subsection{Recrystallisation Temperature}
+The rate of recrystallisation is proportional to temperature. 
+There exists a `recrystallisation temperature' at which: a 50\% cold worked metal will just fully recrystallise in one hour.
+Cold work less than 50\% will take longer. CW=50\% but lower temp will take longer.
+Some examples are:
+
+\begin{tabular}{c|c|c}
+  Metal & Melting temperature $(^\circ C)$ & Recrystallisation temperature $(^\circ C)$ \\
+  \hline
+  Lead & 327 & -4 \\
+  Aluminium & 660 & 80 \\
+  Copper & 1085 & 120 \\
+  Iron & 1538 & 370 \\
+\end{tabular}
+
+\subsubsection{Hot Work}
+Hot work (i.e. forging) is work done to a metal above the recrystallisation temperature.
+At this point, plastic deformation and recrystallisation happen at the same time. 
+This means it won't be work hardened or it will be but it will be done at the same time.
+
+\subsubsection{Diffusivity}
+Diffusion is the movement of atoms through the lattice.
+Lattice atoms (or substitutes) move via vacancy diffusion.
+Interstitials `jump' positions by interstitial diffusion.
+
+Diffusivity is a measure of how easily atoms can move.
+Diffusivity (D) behaves according the Arrhenius equation (just like recrystallisation).
+\begin{equation}
+  D = D_0 e^{\frac{-Q}{RT}}
+\end{equation}
+
 \section{Phase diagrams and Alloying}
+\subsection{Phases}
+A phase is a component within a system that has uniform physical characteristics. 
+In high school (and before) you were introduced to the typical Gas, Liquid and Solid (and maybe Plasma and Bose-Einstein Condensate).
+
+\subsection{Solid Solutions}
+Interstitial Solid Solutions 
+\begin{enumerate}
+  \item Solute atom must be small (relative to solvent atom)
+  \item Always have a solubility limit (limited interstitial spots)
+\end{enumerate}
+
+Substitutional Solid Solutions
+\begin{enumerate}
+  \item Similar Atomic Radius 
+  \item Similar Crystal Structure (HCP, FCC etc.) 
+  \item No Solid Solubility limit for some metals
+\end{enumerate}
+
+\subsection{Binary Isomorphous Phase Diagram}
+Two metal single shape phase diagram
+
+\subsection{The Lever Rule}
+The lever rule lets you calculate percentage makeups of the alloys and their phases.
+
+\subsection{What are the compositions of each phase?}
+
 \section{Strengthening mechanisms}
 \section{Engineering ceramics and glasses}
 \section{Polymers}
