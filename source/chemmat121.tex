@@ -549,9 +549,9 @@ Interstitials `jump' positions by interstitial diffusion.
 
 Diffusivity is a measure of how easily atoms can move.
 Diffusivity (D) behaves according the Arrhenius equation (just like recrystallisation).
-\begin{equation}
+\begin{equation*}
   D = D_0 e^{\frac{-Q}{RT}}
-\end{equation}
+\end{equation*}
 
 \section{Phase diagrams and Alloying}
 \subsection{Phases}
@@ -559,6 +559,10 @@ A phase is a component within a system that has uniform physical characteristics
 In high school (and before) you were introduced to the typical Gas, Liquid and Solid (and maybe Plasma and Bose-Einstein Condensate).
 
 \subsection{Solid Solutions}
+There are two types of solid solution (in this course). 
+Interstitial Solid Solutions and Substitutional solid solutions.
+These two types have a number of different properties:
+
 Interstitial Solid Solutions 
 \begin{enumerate}
   \item Solute atom must be small (relative to solvent atom)
@@ -573,12 +577,50 @@ Substitutional Solid Solutions
 \end{enumerate}
 
 \subsection{Binary Isomorphous Phase Diagram}
-Two metal single shape phase diagram
+This is a two metal (binary) single shape (i.e. FCC, isomorphous) phase diagram.
+Here you can see the graph of temperature against weight percent Ni for a Cu solution.
+Clearly, when $\alpha$ is 100\% copper it melts at the melting point of copper, 1085$^\circ C$ but when $\alpha$ is 100\% nickel, it melts at the melting point of nickel 1453$^\circ C$.
+For any other composition, $\alpha$ will melt at a range of temperatures.
+This is what we are graphing in a phase diagram.
+
+\begin{center}
+  \includegraphics[scale=0.5]{binaryisomorphous}
+\end{center}
 
 \subsection{The Lever Rule}
 The lever rule lets you calculate percentage makeups of the alloys and their phases.
+To calculate the percentage of each phase at a given temperature:
+\begin{enumerate}
+  \item Place Pivot (always at the overall alloy composition)
+  \item Draw the tie-line
+  \item Draw on the phase symbols (opposite)
+  \item Calculate Lengths
+\end{enumerate}
 
-\subsection{What are the compositions of each phase?}
+\subsubsection{What are the compositions of each phase?}
+To calculate the amount of each alloy in each phase, look at where the tie-line intersects with the solidus, that will be the percentage amount of Ni (or whatever is on the x axis).
+You can then calculate the amount of the other metal by subtracting from 100. 
+
+The intersection with the liquidus will give you the percentage of Ni in the liquid state and so on.
+This is a useful tool for all phase diagrams but is especially easy to use in this case.
+
+
+\subsection{Binary Eutectic Phase Diagram}
+\begin{center}
+  \includegraphics[scale=0.5]{binaryeutectic}
+\end{center}
+
+\subsubsection{The Eutectic Point}
+The Eutectic Point is a point at which the alloy has its own freezing or melting point.
+This is clearly seen on the graph where the two lines meet with the $\alpha$ and $\beta$ section.
+The Eutectic reaction is when a liquid phase transforms into two solid phases ($\alpha+\beta$)
+
+\begin{equation*}
+  L_{EUT} \underset{\text{heat}}{\stackrel{\text{cool}}{\rightleftharpoons}} \alpha + \beta 
+\end{equation*}
+
+\subsubsection{Microstructure Development}
+The microstructure of metals formed will vary greatly but noticably will form equiaxed grains of one element with grains of the other at the boundaries or layers of each metal.
 
 \section{Strengthening mechanisms}
 \section{Engineering ceramics and glasses}

@@ -397,6 +397,39 @@ Essential nodes are nodes that are connected to \textit{three} or more paths.
 
 \end{example}
 
+\subsubsection{Superposition}
+Superposition is the `divide and conquer' of EE. 
+The Superposition Theorem states that: Any \textit{linear} response in a circuit containing multiple sources is equal to the algrebraic sum of the contributions to that response.
+A linear response means that you can only calculate current and voltage \textbf{NOT} power.
+However, you can separately calculate voltage and current and then calculate power. 
+The steps are as follows:
+
+\begin{enumerate}
+  \item Set all but one of your current and/or voltage supplies to zero
+  \item Solve this circuit for the desired values 
+  \item Do this for each of your sources
+  \item Sum each of your results i.e $i_1=i_{1(a)}+i_{1(b)}$
+\end{enumerate}
+\marginnote{Setting these to zero means different things! For a voltage supply, it becomes an ideal wire but a current source becomes a gap in the wiring!}[-3cm]
+
+\begin{example}
+
+\end{example}
+
+\subsubsection{Th\'enevin's Theorem}
+This theorem from french physicist Léon Charles Thévenin allows you to simplify \textit{any} collection of sources, wire and resistors into just one voltage source and one resistor (and the load).
+\begin{enumerate}
+  \item Remove the load you want to base the circuit around
+  \item Calculate the Th\'enevin voltage ($V_{TH}$) by calculating the voltage over the gap where the load was
+  \item Calculate the Th\'enevin resistance ($R_{TH}$) by pretending to be a current starting at one end in the gap where the load was and going to the other end, the resistances you pass through add to become the $R_{TH}$
+  \item Put it all together. A voltage source that outputs $V_{TH}$ in series with a resistor $R_{TH}$, in series with the load.
+\end{enumerate}
+
+\begin{example}
+
+\end{example}
+
+
 \subsection{Models}
 In Electrical Engineering (EE), a model is a description that communicates
 
