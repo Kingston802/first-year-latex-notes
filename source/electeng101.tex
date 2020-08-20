@@ -480,10 +480,17 @@ The thermistor is generally more responsive, however, the response is not linear
 
 Where $\beta$ is a material specific constant and $R_0$ is the resistance at $0^\circ C$.
 
+\includegraphics[scale=0.3]{thermistorgraph}
+
+An important issue to consider with thermistors (and any resistive transducer) is the issue of $i^2R$ heating. 
+Because, resistance is negatively correlated with temperature due to the semiconductor material used in thermistors, this means an increase in temperature will decrease the resistance and ten further increase the current until catastrophic failure of the thermistor (this is called \textit{thermal runaway}).
+
 \subsubsection{Sensor Interface Circuitry}
 Sensor interface circuitry is circuitry that allows us to monitor the unknown resistance of whatever resistive transducer is in the circuit.
 The is could be any one of the three we have covered (and more).
 The most primitive form of this circuitry is a simple voltage divider.
+The circuit produces a voltage output proportional to the resistance of the transducer. 
+This allows us to more easily monitor the sensor. 
 
 Evaluating the equation for a voltage divider, we can derive an equation for $R_x$ (the resistance we are solving for) given we know the other resistance $R$ in the voltage divider.
 \begin{equation*}
@@ -491,6 +498,31 @@ Evaluating the equation for a voltage divider, we can derive an equation for $R_
 \end{equation*}
 
 \subsubsection{The Wheatstone Bridge}
+There are a number of issues with using a simple voltage divider to evaluate our resistive transducer:
+\begin{itemize}
+  \item $v_{\text{out}}$ is a function of $v_s$ (unstable)
+  \item Temperature can confound measurement (resistance $\propto$ temperature)
+  \item There is always a DC offset in a voltage divider
+\end{itemize}
+
+The solution to that (invented by Charles Wheatstone) is the \textit{Wheatstone Bridge}.
+If we take two voltage dividers in parallel, we can solve it using the voltage divider formula twice. 
+Rearranging, if we can find resistor values so that the output voltage is zero, then we can make a formula for $R_x$ that is \textit{independent} of $V_s$.
+
+\begin{marginfigure}
+  \vspace{ -2cm }
+  \includegraphics[scale=0.3]{wheatstone}
+\end{marginfigure}
+
+\begin{equation*}
+  \frac{R_3}{R_1+R_3} - \frac{R_2}{R_2 + R_x} = 0 \implies R_x = \frac{R_2R_3}{R_1}
+\end{equation*}
+
+Since, in this bridge, our output voltage is a difference in voltages we have no DC offset. 
+Additionally, if we change $R_3$ for an identical gauge as $R_x$, both gauges will track in parallel.
+This cancels any change in temperature hence freeing us from temperature variation.
+And so, we have done it! The wheatstone bridge solves all the issues we had with the voltage divider.
+
 
 \section{Electricity Supply}
 
