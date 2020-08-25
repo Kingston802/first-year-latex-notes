@@ -270,10 +270,11 @@ Note: Negative directions will have a bar over them (read `bar').
 Planes in the lattice are defined by \textbf{Miller Indices} $(h,k,l)$.
 
 \begin{enumerate}
-  \item Work out the intercepts of the plane on the unit cell 
+  \item Ensure the origin is not on the plane 
+  \item Determine distance to to intercept plane, by travelling along each axis from the origin (intercepts)
   \item Take reciprocals of the intercepts 
   \item Convert to integers (multiply by a constant)
-  \item Put in round brackets 
+  \item Put in round brackets (parenthesis)
 \end{enumerate}
 
 \begin{example}
@@ -598,6 +599,8 @@ To calculate the percentage of each phase at a given temperature:
 \end{enumerate}
 
 \subsubsection{What are the compositions of each phase?}
+Phases are oppposite, composition is on the `right' side.
+
 To calculate the amount of each alloy in each phase, look at where the tie-line intersects with the solidus, that will be the percentage amount of Ni (or whatever is on the x axis).
 You can then calculate the amount of the other metal by subtracting from 100. 
 
@@ -654,6 +657,51 @@ This is because the layers of a eutectic solid are exactly what we are looking f
 
 A eutectic solid (a metal with the eutectic metal combination) cooled to solid will have the following properties:
 very high yield strength, lower ductility (In the CuAl example, still ductile). Pearlite like layers.
+
+\subsection{Strengthening Methods for Steel}
+\subsubsection{Martensite}
+By quenching from the Austenite region we can form a phase called Martensite.
+No diffusion is required (because it is a displacive or shear transformation) so this transformation is almost instant.
+
+\begin{itemize}
+  \item BCT $\implies$ No slip systems $\implies$ Hard and Brittle
+  \item It is a super-saturated solid solution of C in Fe
+  \item It is METASTABLE
+\end{itemize}
+
+\begin{marginfigure}
+  \vspace{-2cm}
+  \includegraphics[scale=0.3]{martensitecell}
+\end{marginfigure}
+
+
+\subsubsection{Tempered Martensite}
+When you temper martensite, you get a very fine dispersion of Fe$_3$C particles in a ductile ferrite matrix.
+Tempered Martensite contains NO actual martensite.
+It has been heat treated (tempered) to `push' the metastable phase into stable phases.
+Note that Fe$_3$C$+\alpha$ is \textbf{not} pearlite. 
+Recall that we only get pearlite when cooling from the austenite region.
+This is hence a new compound that we call Tempered Martensite.
+Below 723$^\circ$C, this reaction will happen:
+\begin{equation*}
+  M \rightarrow \alpha + \text{Fe}_3\text{C}
+\end{equation*}
+In this reaction, C diffuses out of the BCT structure of Martensite into Fe$_3$C, and the BCT structure relaxes into BCC Iron ($\alpha$).
+Below is the resulting microstructure/s:
+
+\includegraphics[scale=0.3]{martensite}
+
+Tempered Martensite Properties:
+\begin{itemize}
+  \item Optimum Strength for a steel with sufficient ductility to still be tough
+\end{itemize}
+
+\subsection{Time-Temperature-Transformation (TTT) Curves }
+For a steel of eutectoid composition (0.8\% C),
+\begin{center}
+\includegraphics[scale=0.5]{ttt}
+\end{center}
+
 
 \section{Engineering ceramics and glasses}
 \section{Polymers}

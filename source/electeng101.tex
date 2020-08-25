@@ -523,6 +523,65 @@ Additionally, if we change $R_3$ for an identical gauge as $R_x$, both gauges wi
 This cancels any change in temperature hence freeing us from temperature variation.
 And so, we have done it! The wheatstone bridge solves all the issues we had with the voltage divider.
 
+\subsection{Equivalent Circuit Model}
+The equivalent circuit model allows us to simplify any circuit into a resistor and a thevenin circuit.
+It is summarised by this diagram:
+
+\begin{center}
+  \includegraphics[scale=0.3]{equivalent}
+\end{center}
+
+\subsection{Operational Amplifiers}
+Amplifiers make things bigger.
+An `OpAmp' amplifies a given voltage proportional to the difference of its inputs.
+Inside an OpAmp, the circuit is very complicated.
+Operational Amplifiers are commonly found in plastic packages called integrated circuits (ICs).
+An OpAmp is called a differential amplifier because its output is related by this difference:
+
+\begin{equation*}
+  V_{\text{out}} = A(V_+ - V_-)
+\end{equation*}
+
+\begin{itemize}
+  \item $A$ is the amplification factor (or open loop gain) of that specific OpAmp. 
+  \item $V_+$ is the non-inverting input voltage 
+  \item $V_-$ is the invertng input voltage
+\end{itemize}
+
+\begin{marginfigure}
+  \includegraphics[scale=0.3]{opamp}
+\end{marginfigure}
+
+\subsubsection{The Pins}
+OpAmps have two input pins and one output pin.
+The two input pins are the inverting and non-inverting pins (written as $v^{-}$ and $v^{+}$ respectively).
+There are also power supply pins that are commonly left off the circuit diagram that provide power, these are commonly labeled $V_{CC}$ and $V_{DD}$.
+
+\begin{marginfigure}
+  \vspace{ 2cm }
+  For an Ideal OpAmp,
+  \begin{itemize}
+    \item $A = \infty$
+    \item $R_{\text{in}} = \infty\Omega$
+    \item $I_{\text{in}} = 0A$
+    \item $R_{\text{out}} = 0\Omega$
+  \end{itemize}
+\end{marginfigure}
+
+\subsubsection{Negative Feedback OpAmps}
+Negative Feedback OpAmps `feed' some of the voltage back into the inverting terminal.
+There are two types of these circuits, inverting and non-inverting.
+In a non-inverting circuit, as the input voltage increases the output voltage increases and as the input voltage decreases the output voltage decreases.
+For an inverting circuit, it is the opposite.
+It `inverts' that behaviour.
+
+\begin{center}
+  \includegraphics[scale=0.4]{inverting}
+\end{center}
+
+The circuit on the left is non-inverting ().
+The circuit on the right is inverting. 
+\subsubsection{Designing OpAmp Circuits}
 
 \section{Electricity Supply}
 
