@@ -594,7 +594,7 @@ To calculate the percentage of each phase at a given temperature:
 \begin{enumerate}
   \item Place Pivot (always at the overall alloy composition)
   \item Draw the tie-line
-  \item Draw on the phase symbols (opposite)
+  \item Draw on the phase symbols 
   \item Calculate Lengths
 \end{enumerate}
 
@@ -670,10 +670,14 @@ No diffusion is required (because it is a displacive or shear transformation) so
 \end{itemize}
 
 \begin{marginfigure}
+  \vspace{-1cm}
+  \includegraphics[scale=0.3]{martensitestructure}
+\end{marginfigure}
+
+\begin{marginfigure}
   \vspace{-2cm}
   \includegraphics[scale=0.3]{martensitecell}
 \end{marginfigure}
-
 
 \subsubsection{Tempered Martensite}
 When you temper martensite, you get a very fine dispersion of Fe$_3$C particles in a ductile ferrite matrix.
@@ -696,14 +700,97 @@ Tempered Martensite Properties:
   \item Optimum Strength for a steel with sufficient ductility to still be tough
 \end{itemize}
 
+\subsubsection{Spheroidising of Steels}
+The spheroidisation of Steel is a heat treatment that makes it more ductile.
+It only works for steels that contain pearlite i.e. have been slowcooled and have a hight amount of Carbon (0.5-1 \%).
+
+\begin{center}
+Heating to $700^\circ C$ and holding for several hours transforms the layers of $Fe_3C$ into spheres.
+\end{center}
+
+
 \subsection{Time-Temperature-Transformation (TTT) Curves }
+A TTT curve tells us how fast is fast cooling. 
+Generally, we do this to figure out what phases will form in a metal cooled from one temperature to another in a given time. 
+It graphs temperature against time (generally log time)
+It is useful but limited, it cannot tell you what happens in the bottom right (dotted point).  
+
+The `curvy' curve is the start and finish lines of the pearlite transformation from austenite (oft included is a `50\%' complete line, which will be 50\% Austenite and 50\% Pearlite).
+Pearlite exists on a spectrum between 'coarse' and 'fine', above 'the nose' (farthest left point of the start line) will form coarse Pearlite and below that will form fine Pearlite. 
+Below that, the microstructure formed will be Bainite (not important for 121).
+Below that is the Martensite Start Line, this will be where Martensite is formed.
+
+It's important to remember that these only really make sense with "Isothermal heat treatment". 
+This means the line travels straight horizontally. 
+This is an assumption that is rarely true in real life.
+
+\begin{theorem*}
+In 121, we only discuss a steel with a eutectoid composition (0.8\% C).
+\end{theorem*}
+
 For a steel of eutectoid composition (0.8\% C),
 \begin{center}
 \includegraphics[scale=0.5]{ttt}
 \end{center}
 
+\subsubsection{Steel Summary}
+\includegraphics[scale=0.4]{steelsummary}
+
+A steel is an alloy of Fe and C.
+Steels are widely used in engineering because they are cheap and effective. 
+Steels are interstitial solids meaning each phase has a fixed solubility of Carbon.
+
+\begin{theorem*}
+  \textbf{Ferrite} ($\alpha$)
+
+  Ferrite has a BCC structure and exists on the far left of the phase diagram (maximum solubility of 0.02\%).
+  Ferrite is ductile, magnetic (ferrous) and exists between room temperature and 910$^\circ C$.
+\end{theorem*}
+
+\begin{theorem*}
+  \textbf{Austenite} ($\gamma$)
+
+  Austenite has an FCC structure and a maximum solubility of 1.7\%.
+  It is also ductile but non-magnetic.
+\end{theorem*}
+
+\begin{theorem*}
+  \textbf{Cementite} ($Fe_3C$)
+
+  Cementite is not a phase but a compound of fixed composition.
+  It is very brittle and hard.
+\end{theorem*}
+
+\begin{theorem*}
+  \textbf{Pearlite} ($P$)
+
+  Pearlite is the microconstituent of Steel that forms at the eutectoid composition (0.8\%).
+  It consists of layers of ductile ferrite ($\alpha$) and brittle cementite ($Fe_3C$).
+\end{theorem*}
+
+\begin{theorem*}
+  \textbf{Martensite} ($G$)
+
+  Martensite is a super-saturated solid solution of C in Fe that is BCT and hence hard and brittle.
+  It is metastable and formed from quenching. 
+\end{theorem*}
 
 \section{Engineering ceramics and glasses}
+
+\subsection{Ceramic Materials}
+
+\subsection{Ceramic Structures}
+
+\subsection{Silicate Structures}
+
+\subsection{Fracture toughness of ceramics}
+
+\subsection{Processing Ceramics}
+
+\subsection{Glass}
+
+\subsection{Glass Processes} 
+
 \section{Polymers}
 \section{Failure of materials}
 \section{Corrosion of metals}
