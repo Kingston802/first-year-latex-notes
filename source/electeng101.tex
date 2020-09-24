@@ -1,5 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage{../template/NotesTeX}
+\setlength{\arrayrulewidth}{1mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.5}
 \begin{document}
 \setlength{\parskip}{\baselineskip}%
 \graphicspath{ {/home/ab/school/notes/electeng101/} }
@@ -581,7 +584,86 @@ It `inverts' that behaviour.
 
 The circuit on the left is non-inverting ().
 The circuit on the right is inverting. 
-\subsubsection{Designing OpAmp Circuits}
+\subsubsection{OpAmp Circuits}
+\begin{equation*}
+  V_{\text{out}} = G \times V_{\text{in}}
+\end{equation*}
+
+\begin{table}[ht]
+  \begin{tabular}{|m{4cm}|m{3cm}|m{4cm}|m{3cm}|}
+    \hline
+    \includegraphics[scale=0.2]{noninvertingamp} &
+    $= ( 1 + \frac{R_2}{R_1}V_{\text{in}})$ &
+    \includegraphics[scale=0.3]{voltagefollower} &
+    $= V_{\text{in}}$ \\
+    \hline
+    \includegraphics[scale=0.25]{invertingamp} &
+    $= -\frac{R_2}{R_1}V_{\text{in}})$ &
+    \includegraphics[scale=0.3]{subtractor} &
+    $= \frac{R_2}{R_1}(V_2 - V_1)$ \\
+    \hline
+    \includegraphics[scale=0.25]{invertingsumming} &
+    $= -\frac{R_2}{R_1}(V_1+V_2)$ &
+    \includegraphics[scale=0.3]{noninveringsumming} &
+    $= V_1 + V_2$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Number Systems}
+Converting between from decimal to base n:
+\begin{itemize}
+  \item Divide the number by n
+  \item The remainder is the next bit of the final number
+  \item Divide the quotient (not the remainder) by n again
+  \item Do this over and over until the quotient is zero
+  \item Read the number back MSB to LSB (backwards)
+\end{itemize}
+
+\subsubsection{Analog to Digital Conversion}
+
+\subsection{Logic}
+\begin{table}[ht]
+  \begin{tabular}{|m{4cm}|m{9cm}|}
+    \hline
+    Identity & $A + 0 = A$ \\
+    \hline
+    Annihilator &  $A + 1 = 1$ \\
+    \hline
+    Idempotence & $A+A=A$ \\
+    \hline 
+    Identity &  $A \cdot 1 = A$ \\
+    \hline 
+    Annihilator & $A \cdot 0 = 0$ \\
+    \hline 
+    Idempotence & $A \cdot A = A$ \\ 
+    \hline 
+    Complementation & $A + \bar{A} = 1$ \\
+    \hline 
+    Complementation & $A \cdot \bar{A} = 0$ \\
+    \hline 
+    Commutativity of OR & $A + B = B + A$ \\
+    \hline
+    Commutativity of AND & $A \cdot B = B \cdot A$ \\
+    \hline 
+    Associativity of OR & $A + (B + C) = (A + B) + C$ \\
+    \hline
+    Associativity of AND & $A \cdot (B \cdot C) = (A \cdot B) \cdot C$ \\
+    \hline
+    Distributivity of OR & $A(B+C) = (AB) + (AC)$ \\
+    \hline 
+    Absorption of AND & $A + (A \cdot B) = A$ \\
+    \hline 
+    Absorption of OR & $A \cdot (A + B) = A$ \\
+    \hline 
+    Double Negation &  $\bar{\bar{A}} = A$ \\
+    \hline 
+    De Morgan 1 & $\bar{A} + \bar{B} = \bar{AB}$ \\
+    \hline
+    De Morgan 2 & $\bar{A}\bar{B} = \overline{A+B}$ \\
+    \hline
+  \end{tabular}
+\end{table}
 
 \section{Electricity Supply}
 
