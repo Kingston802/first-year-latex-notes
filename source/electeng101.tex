@@ -1,8 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage{../template/NotesTeX}
 \setlength{\arrayrulewidth}{1mm}
-\setlength{\tabcolsep}{18pt}
-\renewcommand{\arraystretch}{1.5}
+% \setlength{\tabcolsep}{18pt}
+% \renewcommand{\arraystretch}{1.5}
 \begin{document}
 \setlength{\parskip}{\baselineskip}%
 \graphicspath{ {/home/ab/school/notes/electeng101/} }
@@ -542,13 +542,13 @@ Operational Amplifiers are commonly found in plastic packages called integrated 
 An OpAmp is called a differential amplifier because its output is related by this difference:
 
 \begin{equation*}
-  V_{\text{out}} = A(V_+ - V_-)
+  V_{\text{out}} = A(V^+ - V^-)
 \end{equation*}
 
 \begin{itemize}
   \item $A$ is the amplification factor (or open loop gain) of that specific OpAmp. 
-  \item $V_+$ is the non-inverting input voltage 
-  \item $V_-$ is the invertng input voltage
+  \item $V^+$ is the non-inverting input voltage 
+  \item $V^-$ is the inverting input voltage
 \end{itemize}
 
 \begin{marginfigure}
@@ -598,7 +598,7 @@ The circuit on the right is inverting.
     $= V_{\text{in}}$ \\
     \hline
     \includegraphics[scale=0.25]{invertingamp} &
-    $= -\frac{R_2}{R_1}V_{\text{in}})$ &
+    $= -\frac{R_2}{R_1}V_{\text{in}}$ &
     \includegraphics[scale=0.3]{subtractor} &
     $= \frac{R_2}{R_1}(V_2 - V_1)$ \\
     \hline
@@ -610,6 +610,16 @@ The circuit on the right is inverting.
   \end{tabular}
 \end{table}
 
+\includegraphics[scale=0.5]{opampvoltagedivider}
+
+If the middle between two voltages is zero then one side must be negative. 
+
+\begin{example*}
+Linear graphs
+
+$V_{\text{out}} = \text{Gain}(V_\text{in} + V_\text{offset})$
+\end{example*}
+
 \subsection{Number Systems}
 Converting between from decimal to base n:
 \begin{itemize}
@@ -619,10 +629,24 @@ Converting between from decimal to base n:
   \item Do this over and over until the quotient is zero
   \item Read the number back MSB to LSB (backwards)
 \end{itemize}
+\begin{equation*}
+  d_1b^n+d_{n-1}b^n-1 + \cdots d_0b^0 + d_{-1}b^{-1} + d_{-2}b^{-2} + \cdots d_{-m}b^{-m}
+\end{equation*}
 
 \subsubsection{Analog to Digital Conversion}
+We need to convert a range of voltage into binary numbers. 
+We quantize a voltage to this range. 
 
-\subsection{Logic}
+i.e. for a 3 bit ADC there are 8 representations ($2^3$)
+\begin{equation*}
+  \lfloor{\frac{V_\text{in}}{V_\text{ref}}\times 2^n}\rfloor{}
+\end{equation*}
+
+Our voltage resolution is $\frac{\frac{V_\text{in}}{V_\text{ref}}}{2^n}$. 
+This will be the distance between any two points i.e. between 1 and 2 on the output. 
+
+\subsection{Decision Making}
+\subsubsection{Boolean Algebra}
 \begin{table}[ht]
   \begin{tabular}{|m{4cm}|m{9cm}|}
     \hline
@@ -664,6 +688,20 @@ Converting between from decimal to base n:
     \hline
   \end{tabular}
 \end{table}
+
+\textbf{The truth table}
+In a truth table we must show \textbf{every} combination of inputs with an operator or equation i.e. for XOR
+
+\begin{tabular}{l|l|l}
+  A & B & F \\
+  \hline
+  0 & 0 & 0 \\
+  0 & 1 & 1 \\ 
+  1 & 0 & 1 \\
+  1 & 1 & 0 \\
+\end{tabular}
+
+\subsubsection{Digital Logic}
 
 \section{Electricity Supply}
 
